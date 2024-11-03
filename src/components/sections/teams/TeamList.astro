@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import TeamCard from "../../ui/elements/cards/TeamCard.astro";
+
+const valorantTeams = await getCollection('teams', ({ data }) => {
+    return data.game === 'valorant';
+});
+const leagueTeams = await getCollection('teams', ({ data }) => {
+    return data.game === 'league';
+});
+const overwatchTeams = await getCollection('teams', ({ data }) => {
+    return data.game === 'overwatch';
+});
+const rocketLeagueTeams = await getCollection('teams', ({ data }) => {
+    return data.game === 'rocket_league';
+});
+const csTeams = await getCollection('teams', ({ data }) => {
+    return data.game === 'counter_strike';
+});
+valorantTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
+leagueTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
+overwatchTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
+rocketLeagueTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
+csTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
+---
+
+<div class="flex flex-wrap gap-[20px]">
+    {leagueTeams.map((team) => (
+        <TeamCard game="league" league={team.data.league} team={team.data.name}></TeamCard>
+    ))}
+    {valorantTeams.map((team) => (
+        <TeamCard game="valorant" league={team.data.league} team={team.data.name}></TeamCard>
+    ))}
+    {overwatchTeams.map((team) => (
+        <TeamCard game="overwatch" league={team.data.league} team={team.data.name}></TeamCard>
+    ))}
+    {rocketLeagueTeams.map((team) => (
+        <TeamCard game="rocket_league" league={team.data.league} team={team.data.name}></TeamCard>
+    ))}
+    {csTeams.map((team) => (
+        <TeamCard game="counter_strike" league={team.data.league} team={team.data.name}></TeamCard>
+    ))}
+</div>

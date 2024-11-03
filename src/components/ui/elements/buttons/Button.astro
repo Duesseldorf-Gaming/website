@@ -1,0 +1,14 @@
+---
+interface Props {
+    text: string;
+    link?: string;
+}
+
+const { text, link } = Astro.props;
+---
+
+<a class="h-fit" href={link}>
+    <div class="button-clip-normal h-[100px] w-[415px] text-center align-middle text-base leading-[100px] bg-primary">
+        <span class="w-full align-middle inline-block leading-normal font-display text-6xl text-gray-500">{text}</span>
+    </div>
+</a>

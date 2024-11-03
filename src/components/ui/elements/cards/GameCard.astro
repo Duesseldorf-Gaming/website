@@ -1,0 +1,27 @@
+---
+import type {ImageMetadata} from "astro";
+import {Image} from "astro:assets";
+import {gameImages} from "@data/constants";
+
+const { game } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('src/images/games/*.{jpeg,jpg,png,svg,gif}')
+if (!images[`/src/images/games/${game}.png`]) throw new Error(`"/src/images/games/${game}.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
+else if (!images[`/src/images/games/${game}-hover.png`]) throw new Error(`"/src/images/games/${game}-hover.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
+else if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"/src/images/games/${game}-icon.svg" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
+else if (!images[`/src/images/games/${game}-reg.png`]) throw new Error(`"/src/images/games/${game}-reg.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
+---
+<div class="w-[560px] h-[250px] wrapper560">
+    <div class=`relative bg-gray-200 ${gameImages[game]} grayscale bg-cover max-w-full max-h-full element561`>
+        <Image class="h-full max-w-full max-h-fit" src={images[`/src/images/games/${game}-reg.png`]()} alt=`${game} teams` height="250" width="560" ></Image>
+    </div>
+    <div class=`relative bg-gray-200 ${gameImages[game]} bg-cover max-w-full max-h-full element562`>
+        <Image class="h-full max-w-full max-h-fit" src={images[`/src/images/games/${game}-hover.png`]()} alt=`${game} teams` height="250" width="560" ></Image>
+    </div>
+</div>
+<style>
+    .element561 { display: block; }
+    .element562 { display: none; }
+    .wrapper560:hover .element561 { display: none; }
+    .wrapper560:hover .element562 { display: block; }
+</style>

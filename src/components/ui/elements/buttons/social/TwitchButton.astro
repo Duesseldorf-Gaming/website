@@ -1,0 +1,15 @@
+---
+import ImageLink from "@components/ui/links/ImageLink.astro";
+const { link } = Astro.props;
+---
+
+<a
+        href={link}
+        rel="external"
+>
+    <ImageLink
+            size="40px"
+            image="@images/other_brands/TwitchGlitchWhite.png"
+            alt="Twitch"
+    />
+</a>

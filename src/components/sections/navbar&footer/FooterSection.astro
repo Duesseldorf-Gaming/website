@@ -1,0 +1,54 @@
+---
+import strings from "@utils/navigation.ts";
+import Logo from "@components/Logo.astro";
+import DiscordBanner from "@components/ui/elements/banners/DiscordBanner.astro";
+import FooterLink from "@components/ui/links/FooterLink.astro";
+import ImageLink from "@components/ui/links/ImageLink.astro";
+
+import twitch from "@images/other_brands/TwitchGlitchWhite.png"
+import instagram from "@images/other_brands/Instagram_Glyph_White.png"
+import twitter from "@images/other_brands/twitter_logo-white.png"
+---
+<footer class="max-h-[320px] h-[320px] w-full bg-gray-500">
+    <DiscordBanner link={strings.socialLinks.discord}></DiscordBanner>
+    <div class="h-[220px] flex">
+        <div class="h-[220px] z-10 flex items-center w-full mx-[100px]">
+            <ul class="space-y-5 min-w-[415px]">
+                {strings.footerLinks.map(link => (
+                        <li><FooterLink link={link.url} name={link.name} /></li>
+                ))}
+            </ul>
+            <ul class="columns-2 gap-5 pl-[20px]">
+                <li class="mt-0">
+                    <ImageLink size="50" image={instagram} alt="Instagram" url={strings.socialLinks.instagram}></ImageLink>
+                </li>
+                <li class="mt-5">
+                    <ImageLink size="50" image={twitter} alt="Twitter" url={strings.socialLinks.twitter}></ImageLink>
+                </li>
+                <li class="mt-5">
+                    <ImageLink size="50" image={twitch} alt="Twitch" url={strings.socialLinks.twitch}></ImageLink>
+                </li>
+            </ul>
+            <div class="w-full h-full flex flex-row-reverse items-end">
+                <div class="flex flex-col items-end space-y-3">
+                    <Logo></Logo>
+                    <span class="pb-[10px] font-body font-bold text-gray-200">Copyright © 2024 Hochschulsport Düsseldorf e.V.</span>
+                </div>
+            </div>
+        </div>
+        <div class="absolute overflow-hidden h-[220px] w-[1920px] flex flex-row-reverse">
+            <svg class="fill-gray-400" width="704" height="220" viewBox="0 0 704 220" xmlns="http://www.w3.org/2000/svg">
+                <path d="M603.884 235.845H685.507V174.015L603.884 235.845Z"/>
+                <path d="M377.507 177.84L326.174 199.513L229.884 156.487L357.42 162.861L364.435 167.96L365.71 168.916L377.507 177.84Z"/>
+                <path d="M316.609 131.309L52.6089 99.7562L254.116 83.502L316.609 131.309Z"/>
+                <path d="M229.246 57.686H140.29L0 -39.202L135.507 -14.0239L229.246 57.686Z"/>
+                <path d="M118.29 -81.5906L252.522 27.4085H340.522L283.449 -59.9183L118.29 -81.5906Z"/>
+                <path d="M447.333 235.845H332.87L394.725 195.369L447.333 235.845Z"/>
+                <path d="M350.087 -109L367.623 28.683H498.348L350.087 -109Z"/>
+                <path d="M511.739 -67.8865L521.623 28.6829H581.884L511.739 -67.8865Z"/>
+                <path d="M684.869 -19.7605L679.13 28.6835H610.58L684.869 -19.7605Z"/>
+                <path d="M665.739 90.513L704 61.1917H287.913L527.362 244.769L648.522 152.98L686.783 123.659H576.145L597.188 152.98L541.391 195.369V90.513H665.42H665.739ZM508.87 192.182L377.188 90.513H508.87V192.182Z"/>
+            </svg>
+        </div>
+    </div>
+</footer>

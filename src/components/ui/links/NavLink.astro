@@ -1,0 +1,11 @@
+---
+const { name, link } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<a
+    class=`${pathname === link ? "text-primary" : ""} font-display font-normal text-4xl text-gray-100 hover:text-primary`
+    href={link}
+>
+        {name}
+</a>

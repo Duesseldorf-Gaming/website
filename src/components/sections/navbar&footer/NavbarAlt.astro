@@ -1,0 +1,46 @@
+---
+//Import relevant dependencies
+import NavLink from "@components/ui/links/NavLink.astro";
+import strings from "@utils/navigation.ts";
+import Logo from "@components/Logo.astro";
+import { SITE } from "@data/constants";
+
+// Select the correct translation based on the page's lang prop:
+---
+
+<!-- Main header component -->
+<header
+        class=""
+>
+    <!-- Navigation container -->
+    <nav
+            class=""
+            aria-label="Global"
+    >
+        <div class="">
+            <!-- DG logo -->
+            <a
+                    class=""
+                    href={SITE.url}
+                    aria-label="Brand"
+            >
+                <Logo class="" />
+            </a>
+        </div>
+        <!-- Contains navigation links -->
+        <div
+                id="navbar-collapse-with-animation"
+                class=""
+        >
+            <!-- Navigation links container -->
+            <div
+                    class=""
+            >
+                <!-- Navigation links and Authentication component -->
+                {strings.navBarLinks.map(link => (
+                        <NavLink url={link.url} name={link.name} />
+                ))}
+            </div>
+        </div>
+    </nav>
+</header>

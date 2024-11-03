@@ -1,0 +1,14 @@
+---
+import discordLogo from '@images/other_brands/discord.svg'
+import {Image} from "astro:assets";
+
+const {link} = Astro.props;
+---
+<div class="h-[100px] w-full bg-[#5865F2] px-[100px]">
+    <a href={link}>
+        <div class="flex flex-row items-center gap-[230px] h-full">
+            <Image src={discordLogo} alt="Discord Logo" height={40}></Image>
+            <p class="font-body text-2xl font-black">TRETE UNSEREM DISCORD BEI!</p>
+        </div>
+    </a>
+</div>

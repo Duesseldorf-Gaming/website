@@ -1,0 +1,48 @@
+---
+//Import relevant dependencies
+import NavLink from "@components/ui/links/NavLink.astro";
+import strings from "@utils/navigation.ts";
+import Logo from "@components/Logo.astro";
+import { SITE } from "@data/constants";
+
+// Select the correct translation based on the page's lang prop:
+---
+
+<!-- Main header component -->
+<header
+        class="py-[50px] px-[100px] sticky top-0 z-50 bg-gray-500"
+>
+    <!-- Navigation container -->
+    <nav
+            class="flex items-baseline"
+            aria-label="Global"
+    >
+        <div class="">
+            <!-- DG logo -->
+            <a
+                    class=""
+                    href={SITE.url}
+                    aria-label="Brand"
+            >
+                <Logo class="" />
+            </a>
+        </div>
+        <!-- Contains navigation links -->
+        <div
+                id="navbar-collapse-with-animation"
+                class="basis-full overflow-hidden md:block"
+        >
+            <!-- Navigation links container -->
+            <div
+                    class="mt-5 flex gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:ps-7"
+            >
+                <ul class="flex flex-row gap-x-12">
+                    <!-- Navigation links and Authentication component -->
+                    {strings.indexNavBarLinks.map(link => (
+                            <li><NavLink link={link.url} name={link.name} /></li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
