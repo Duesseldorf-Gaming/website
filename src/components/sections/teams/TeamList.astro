@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import TeamCard from "../../ui/elements/cards/TeamCard.astro";
+import TeamCard from "@components/ui/elements/cards/TeamCard.astro";
 
 const valorantTeams = await getCollection('teams', ({ data }) => {
     return data.game === 'valorant';
@@ -22,22 +22,28 @@ leagueTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 overwatchTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 rocketLeagueTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 csTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
+
+interface Props {
+    games?: Array<"valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike">;
+}
+
+let { games } = Astro.props;
+
+if (games === undefined) games = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"];
+
+let gameTeams = {
+    "valorant": valorantTeams,
+    "league": leagueTeams,
+    "overwatch": overwatchTeams,
+    "rocket_league": rocketLeagueTeams,
+    "counter_strike": csTeams
+}
 ---
 
 <div class="flex flex-wrap gap-[20px]">
-    {leagueTeams.map((team) => (
-        <TeamCard game="league" league={team.data.league} team={team.data.name}></TeamCard>
-    ))}
-    {valorantTeams.map((team) => (
-        <TeamCard game="valorant" league={team.data.league} team={team.data.name}></TeamCard>
-    ))}
-    {overwatchTeams.map((team) => (
-        <TeamCard game="overwatch" league={team.data.league} team={team.data.name}></TeamCard>
-    ))}
-    {rocketLeagueTeams.map((team) => (
-        <TeamCard game="rocket_league" league={team.data.league} team={team.data.name}></TeamCard>
-    ))}
-    {csTeams.map((team) => (
-        <TeamCard game="counter_strike" league={team.data.league} team={team.data.name}></TeamCard>
+    {games.map((game) => (
+        gameTeams[game].map((team) => (
+            <TeamCard game={game} league={team.data.league} team={team.data.name}></TeamCard>
+        ))
     ))}
 </div>

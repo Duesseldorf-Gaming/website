@@ -1,0 +1,67 @@
+---
+// Importing necessary components
+import { ViewTransitions } from 'astro:transitions';
+import Meta from "@components/Meta.astro";
+import Navbar from "@components/sections/navbar&footer/Navbar.astro";
+import FooterSection from "@components/sections/navbar&footer/FooterSection.astro";
+import '@styles/main.css';
+import { SITE } from "@data/constants";
+
+
+// Setting expected props
+const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
+
+// Interface to type-check the properties
+interface Props {
+    title?: string;
+    meta?: string;
+    structuredData?: object;
+    lang?: string;
+    }
+---
+
+<!--
+This is the main structure for the page.
+We set the language of the page to English and add classes for scrollbar and scroll behavior.
+-->
+<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16 bg-gray-500">
+<head>
+    <!-- Adding metadata to the HTML document -->
+    <Meta meta={meta} structuredData={structuredData} />
+    <ViewTransitions />
+
+    <link
+            rel="preload"
+            href="/fonts/BebasNeue-Regular.ttf"
+            as="font"
+            type="font/ttf"
+            crossorigin
+    />
+    <!-- Define the title of the page -->
+    <title>{title}</title>
+</head>
+<body class="max-w-screen-3xl ml-auto mr-auto flex flex-col">
+<!--
+Setting up the main structure of the page.
+The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
+-->
+<div>
+    <Navbar />
+    <main class="pb-[100px] px-[100px] pt-[70px] bg-gray-400 max-h-full">
+        <slot />
+    </main>
+</div>
+<FooterSection />
+<style>
+    /* CSS rules for the page scrollbar */
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+</body>
+</html>

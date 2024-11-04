@@ -1,12 +1,14 @@
 ---
-import ImageLink from "../../links/ImageLink.astro";
+import { Image } from 'astro:assets';
+
+import ImageLink from "@components/ui/links/ImageLink.astro";
 import uniliga from "@images/other_brands/uniliga_wordmark+icon_teal.png"
 import type { ImageMetadata } from 'astro';
 
-import {gameColors} from "@data/constants";
+import {gameColors} from "@data/games";
 
 const { game, league, team } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*.{jpeg,jpg,png,gif}')
+const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*_text.{jpeg,jpg,png,gif}')
 if (!images[`/src/images/teams/${team}_text.png`]) throw new Error(`"src/images/teams/${team}_text.png" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
 ---
 
@@ -16,14 +18,14 @@ if (!images[`/src/images/teams/${team}_text.png`]) throw new Error(`"src/images/
     <div class="p-3.5">
         <div class="flex flex-row justify-between">
             <div class="flex place-self-center">
-                <ImageLink image={uniliga} alt="Uniliga logo" size=30></ImageLink>
+                <Image src={uniliga} alt="Uniliga logo" height=30 />
             </div>
             <div class="">
                 <span class="font-body font-bold text-2xl">{league||"1"} LIGA</span>
             </div>
         </div>
         <div class="pl-14 pt-14 h-full">
-            <ImageLink image={images[`/src/images/teams/${team}_text.png`]()} size=240 alt=`DG ${team}` url=`/unsere_teams/${team}`></ImageLink>
+            <ImageLink image={images[`/src/images/teams/${team}_text.png`]()} size=240 alt=`DG ${team}` url=`/unsere_teams/${team.toLowerCase()}`></ImageLink>
         </div>
     </div>
 </div>

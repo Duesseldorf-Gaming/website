@@ -2,11 +2,19 @@
 
 import FilterButtonCS from "../../ui/elements/buttons/FilterButtonCS.astro";
 import FilterButton from "../../ui/elements/buttons/FilterButton.astro";
+
+interface Props {
+    game?: "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike";
+}
+
+const {game} = Astro.props;
+
+let games = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"];
 ---
 <div class="top-[210px] pb-[100px] z-20 flex flex-wrap gap-[20px] bg-gray-400 ">
-    <FilterButton game="valorant"></FilterButton>
-    <FilterButton game="league"></FilterButton>
-    <FilterButton game="overwatch"></FilterButton>
-    <FilterButton game="rocket_league"></FilterButton>
-    <FilterButtonCS game="counter_strike"></FilterButtonCS>
+    {games.map((gameX) => (
+            (gameX === "counter_strike")
+                ? <FilterButtonCS game={gameX} selected={game === gameX} url={`/unsere_teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButtonCS>
+                : <FilterButton game={gameX} selected={game === gameX} url={`/unsere_teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButton>
+    ))}
 </div>

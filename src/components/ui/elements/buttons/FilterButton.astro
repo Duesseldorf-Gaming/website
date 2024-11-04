@@ -2,19 +2,23 @@
 import type {ImageMetadata} from "astro";
 import {Image} from "astro:assets";
 
-import {gameColorsHover, gameTextColors, gameNames} from "@data/constants";
+import strings from "@data/games";
 
 interface Props {
     game: string;
+    url: string;
+    selected: boolean;
 }
 
-const { game } = Astro.props;
+const { game, url, selected } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>('src/images/games/*.{svg,png}')
 if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"src/images/games/${game}-icon.svg" does not exist in glob: "src/images/games/*.{svg}"`);
 ---
 
-<div class=`button-clip-normal h-[100px] w-[415px] items-center bg-gray-300 flex gap-x-[30px] ${gameColorsHover[game]} pl-[44px] font-display text-4xl ${gameTextColors[game]} hover:text-white justify-start`>
-    <Image class="card-noclip h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${gameNames[game]}` height="44"></Image>
-    {gameNames[game]}
-</div>
+<a href={url}>
+    <div class=`button-clip-normal h-[100px] w-[415px] items-center bg-gray-300 flex gap-x-[30px] pl-[44px] font-display text-4xl ${selected ? strings.gameColors[game] + " text-white" : strings.gameColorsHover[game] + " " + strings.gameTextColors[game] + " hover:text-white"} justify-start`>
+        <Image class="card-noclip h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="44"></Image>
+        {strings.gameNames[game]}
+    </div>
+</a>

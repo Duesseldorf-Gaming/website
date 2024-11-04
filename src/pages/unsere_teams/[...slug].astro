@@ -1,0 +1,66 @@
+---
+import type { InferGetStaticPropsType, ImageMetadata } from 'astro';
+import { getCollection, getEntry, getEntries } from 'astro:content';
+
+import MainLayout from "@layouts/MainLayout.astro";
+import PlayerCard from "@components/ui/elements/cards/PlayerCard.astro";
+import League from "@components/ui/links/League.astro";
+import uniliga from "@images/other_brands/uniliga_wordmark+icon_teal.png"
+import {Image} from "astro:assets";
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+    const teamPages = await getCollection('teams');
+    return teamPages.map(entry => ({
+        params: { slug: entry.slug }, props: { entry },
+    }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+// 2. For your template, you can get the entry directly from the prop
+const { entry } = Astro.props;
+
+const captain = await getEntry('players', entry.data.captain.slug);
+let manager = undefined, coach = undefined, players = undefined, analysts = undefined;
+if (entry.data.manager) manager = await getEntry('players', entry.data.manager.slug);
+if (entry.data.coach) coach = await getEntry('players', entry.data.coach.slug);
+if (entry.data.players) players = await getEntries(entry.data.players);
+if (entry.data.analysts) analysts = await getEntries(entry.data.analysts);
+
+const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*.{jpeg,jpg,png,gif}')
+if (!images[`/src/images/teams/${entry.data.name}.png`]) throw new Error(`"src/images/teams/${entry.data.name}.png" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
+const { Content } = await entry.render();
+---
+<MainLayout>
+    <div class="flex pb-[100px]">
+        <div class="absolute z-20 w-[890px] justify-items-end pr-[20px]">
+            <Image src={images[`/src/images/teams/${entry.data.name}.png`]()} alt={entry.data.name} height=100 />
+        </div>
+        <div class="w-[890px] h-[430px] bg-gray-200 image-clip justify-items-end">
+
+        </div>
+        <div class="flex flex-col ml-[20px]">
+            <h1 class="font-display text-8xl" >DG {entry.data.name}</h1>
+            <div class="flex flex-row pt-[10px] space-x-8">
+                <div class="place-self-auto">
+                    <Image src={uniliga} alt="Uniliga logo" height=30 />
+                </div>
+                <League league={entry.data.league} game={entry.data.game}></League>
+            </div>
+            <span class="pt-8 text-2xl font-body font-extrabold text-gray-100">EST. {entry.data.established}</span>
+            <div class="flex flex-col-reverse max-w-[850px] h-full">
+                <div class="text-wrap h-fit text-2xl">
+                    <Content/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-5 justify-center">
+        <PlayerCard name={captain.data.tag} role="Captain" image={captain.data.image} youtube={!!(captain.data.social && captain.data.social.youtube)} twitch={!!(captain.data.social && captain.data.social.twitch)} youtubeUrl={captain.data.social && captain.data.social.youtube ? captain.data.social.youtube : ""} twitchUrl={captain.data.social && captain.data.social.twitch ? captain.data.social.twitch : ""}></PlayerCard>
+        {manager ? <PlayerCard name={manager.data.tag} role="Manager" image={manager.data.image} youtube={!!(manager.data.social && manager.data.social.youtube)} twitch={!!(manager.data.social && manager.data.social.twitch)} youtubeUrl={manager.data.social && manager.data.social.youtube ? manager.data.social.youtube : ""} twitchUrl={manager.data.social && manager.data.social.twitch ? manager.data.social.twitch : ""}></PlayerCard> : ""}
+        {coach ? <PlayerCard name={coach.data.tag} role="Coach" image={coach.data.image} youtube={!!(coach.data.social && coach.data.social.youtube)} twitch={!!(coach.data.social && coach.data.social.twitch)} youtubeUrl={coach.data.social && coach.data.social.youtube ? coach.data.social.youtube : ""} twitchUrl={coach.data.social && coach.data.social.twitch ? coach.data.social.twitch : ""}></PlayerCard> : ""}
+        {players ? players.map(player => <PlayerCard name={player.data.tag} role="Player" image={player.data.image} youtube={!!(player.data.social && player.data.social.youtube)} twitch={!!(player.data.social && player.data.social.twitch)} youtubeUrl={player.data.social && player.data.social.youtube ? player.data.social.youtube : ""} twitchUrl={player.data.social && player.data.social.twitch ? player.data.social.twitch : ""}></PlayerCard>) : ""}
+        {analysts ? analysts.map(analyst => <PlayerCard name={analyst.data.tag} role="Analyst" image={analyst.data.image} youtube={!!(analyst.data.social && analyst.data.social.youtube)} twitch={!!(analyst.data.social && analyst.data.social.twitch)} youtubeUrl={analyst.data.social && analyst.data.social.youtube ? analyst.data.social.youtube : ""} twitchUrl={analyst.data.social && analyst.data.social.twitch ? analyst.data.social.twitch : ""}></PlayerCard>) : ""}
+    </div>
+</MainLayout>

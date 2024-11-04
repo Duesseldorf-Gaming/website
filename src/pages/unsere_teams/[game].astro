@@ -1,0 +1,21 @@
+---
+import GameFilter from "@components/sections/teams/GameFilter.astro";
+import TeamList from "@components/sections/teams/TeamList.astro";
+import TransitionLayout from "@layouts/TransitionLayout.astro";
+
+export async function getStaticPaths() {
+    return [
+        { params: { game: "valorant" } },
+        { params: { game: "league" } },
+        { params: { game: "rocket_league" } },
+        { params: { game: "overwatch" } },
+        { params: { game: "counter_strike" } },
+    ];
+}
+
+const { game } = Astro.params;
+---
+<TransitionLayout>
+    <GameFilter game={game as "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike"}></GameFilter>
+    <TeamList games={[game as "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike"]}></TeamList>
+</TransitionLayout>

@@ -7,6 +7,7 @@ const teamsCollection = defineCollection({
         name: z.string(),
         game: z.enum(['valorant', 'league', 'rocket_league', 'overwatch', 'counter_strike', 'rainbow']),
         league: z.string(),
+        established: z.string(),
         uniliga: z.string().optional(),
         team_image: z.string().optional(),
         manager: reference('players').optional(),
@@ -26,7 +27,7 @@ const playersCollection = defineCollection({
         social: z.object({
             youtube: z.string().optional(),
             twitch: z.string().optional(),
-        }),
+        }).optional(),
     }),
 });
 // 3. Export a single `collections` object to register your collection(s)

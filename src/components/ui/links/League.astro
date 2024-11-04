@@ -1,0 +1,20 @@
+---
+import type {ImageMetadata} from "astro";
+import strings from "@data/games";
+import {Image} from "astro:assets";
+
+interface Props {
+    game: string;
+    league: string;
+}
+
+const { game, league } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('src/images/games/*.{svg,png}')
+if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"src/images/games/${game}-icon.svg" does not exist in glob: "src/images/games/*.{svg}"`);
+---
+
+<div class="flex h-fit space-x-3">
+    <Image class="card-noclip h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="30"></Image>
+    <span class="text-2xl font-body font-extrabold">{league} Liga</span>
+</div>
