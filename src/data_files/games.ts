@@ -23,11 +23,11 @@ export const gameTextColors: any = {
 }
 
 export const gameImages: any = {
-    valorant: 'bg-valorant-image',
-    league: 'bg-league-image',
-    rocket_league: 'bg-rocket_league-image',
-    overwatch: 'bg-overwatch-image',
-    counter_strike: 'bg-counter_strike-image',
+    valorant: 'xl:bg-valorant-image',
+    league: 'xl:bg-league-image',
+    rocket_league: 'xl:bg-rocket_league-image',
+    overwatch: 'xl:bg-overwatch-image',
+    counter_strike: 'xl:bg-counter_strike-image',
 }
 
 export const gameNames: any = {

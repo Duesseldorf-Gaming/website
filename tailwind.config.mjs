@@ -5,6 +5,15 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		screens: {
+			'sm': '640px',
+			'md': '960px',
+			'lg': '1024px',
+			'xl': '1240px',
+			'1.5xl': '1337px',
+			'2xl': '1536px',
+			'3xl': '1920px',
+		},
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
@@ -26,13 +35,13 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				'hero-pattern': "url('./src/images/background.svg')",
-				'valorant-image': "url('./src/images/games/valorant.png')",
-				'league-image': "url('./src/images/games/league.png')",
-				'rocket_league-image': "url('./src/images/games/rocket_league.png')",
-				'rainbow-image': "url('./src/images/games/rainbow.png')",
-				'counter_strike-image': "url('./src/images/games/counter_strike.png')",
-				'overwatch-image': "url('./src/images/games/overwatch.png')",
+				'hero-pattern': "url('/src/images/background.svg')",
+				'valorant-image': "url('/src/images/games/valorant.png')",
+				'league-image': "url('/src/images/games/league.png')",
+				'rocket_league-image': "url('/src/images/games/rocket_league.png')",
+				'rainbow-image': "url('/src/images/games/rainbow.png')",
+				'counter_strike-image': "url('/src/images/games/counter_strike.png')",
+				'overwatch-image': "url('/src/images/games/overwatch.png')",
 			},
 			maxWidth: {
 				'screen-3xl': '1920px',

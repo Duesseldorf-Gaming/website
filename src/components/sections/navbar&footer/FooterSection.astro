@@ -18,26 +18,26 @@ import twitter from "@images/other_brands/twitter_logo-white.png"
                         <li><FooterLink link={link.url} name={link.name} /></li>
                 ))}
             </ul>
-            <ul class="columns-2 gap-5 pl-[20px]">
-                <li class="mt-0">
+            <ul class="columns-3 min-w-fit gap-5 pl-[20px]">
+                <li class="mt-0 min-h-[50px]">
                     <ImageLink size="50" image={instagram} alt="Instagram" url={strings.socialLinks.instagram}></ImageLink>
                 </li>
-                <li class="mt-5">
+                <li class="mt-5 min-h-[50px]">
                     <ImageLink size="50" image={twitter} alt="Twitter" url={strings.socialLinks.twitter}></ImageLink>
                 </li>
-                <li class="mt-5">
+                <li class="mt-5 min-h-[50px]">
                     <ImageLink size="50" image={twitch} alt="Twitch" url={strings.socialLinks.twitch}></ImageLink>
                 </li>
             </ul>
             <div class="w-full h-full flex flex-row-reverse items-end">
                 <div class="flex flex-col items-end space-y-3">
                     <Logo></Logo>
-                    <span class="pb-[10px] font-body font-bold text-gray-100">Copyright © 2024 Hochschulsport Düsseldorf e.V.</span>
+                    <span class="pb-[10px] font-body font-bold text-gray-100 text-right">Copyright © 2024 Hochschulsport Düsseldorf e.V.</span>
                 </div>
             </div>
         </div>
-        <div class="absolute overflow-hidden h-[220px] w-[1920px] flex flex-row-reverse">
-            <svg class="fill-gray-400" width="704" height="220" viewBox="0 0 704 220" xmlns="http://www.w3.org/2000/svg">
+        <div class="absolute overflow-clip h-[220px] w-full max-w-[1920px] flex flex-row-reverse">
+            <svg class="fill-gray-400 min-h-[220px] min-w-[704px]" width="704" height="220" viewBox="0 0 704 220" xmlns="http://www.w3.org/2000/svg">
                 <path d="M603.884 235.845H685.507V174.015L603.884 235.845Z"/>
                 <path d="M377.507 177.84L326.174 199.513L229.884 156.487L357.42 162.861L364.435 167.96L365.71 168.916L377.507 177.84Z"/>
                 <path d="M316.609 131.309L52.6089 99.7562L254.116 83.502L316.609 131.309Z"/>

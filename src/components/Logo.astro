@@ -1,4 +1,7 @@
-<svg width="199" height="100" viewBox="0 0 199 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+---
+const { class: className, ...rest } = Astro.props;
+---
+<svg class={className} {...rest} width="199" height="100" viewBox="0 0 199 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M170.7 97.4775H193.773V80L170.7 97.4775Z" fill="#DDA068"/>
     <path d="M106.71 81.0811L92.1998 87.2072L64.9814 75.045L101.032 76.8468L103.015 78.2883L103.375 78.5586L106.71 81.0811Z" fill="#DDA068"/>
     <path d="M89.496 67.9279L14.871 59.009L71.8311 54.4144L89.496 67.9279Z" fill="#DDA068"/>

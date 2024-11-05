@@ -9,33 +9,19 @@ import { SITE } from "@data/constants";
 ---
 
 <!-- Main header component -->
-<header
-        class="py-[50px] px-[100px] sticky top-0 z-50 bg-gray-500"
->
+<header class="py-[20px] px-[50px] md:py-[50px] md:px-[100px] sticky top-0 z-50 bg-gray-500">
     <!-- Navigation container -->
-    <nav
-            class="flex items-baseline"
-            aria-label="Global"
-    >
+    <nav class="flex " aria-label="Global">
         <div class="">
             <!-- DG logo -->
-            <a
-                    class=""
-                    href={SITE.url}
-                    aria-label="Brand"
-            >
-                <Logo class="" />
+            <a class="" href={SITE.url} aria-label="Brand">
+                <Logo class="max-h-[60px] md:max-h-fit" />
             </a>
         </div>
         <!-- Contains navigation links -->
-        <div
-                id="navbar-collapse-with-animation"
-                class="basis-full overflow-hidden md:block"
-        >
+        <div class="hidden md:block content-end basis-full overflow-hidden">
             <!-- Navigation links container -->
-            <div
-                    class="mt-5 flex gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:ps-7"
-            >
+            <div class="hidden mt-5 md:flex gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:ps-7">
                 <ul class="flex flex-row gap-x-12">
                     <!-- Navigation links and Authentication component -->
                     {strings.indexNavBarLinks.map(link => (
@@ -43,6 +29,12 @@ import { SITE } from "@data/constants";
                     ))}
                 </ul>
             </div>
+        </div>
+        <div class="md:hidden flex flex-row basis-full justify-end items-center">
+            <svg width="68" height="25" viewBox="0 0 68 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="18" width="68" height="7" fill="#8C8C8C"/>
+                <rect width="68" height="7" fill="#8C8C8C"/>
+            </svg>
         </div>
     </nav>
 </header>
