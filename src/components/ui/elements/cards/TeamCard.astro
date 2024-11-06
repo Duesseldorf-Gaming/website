@@ -12,8 +12,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*_
 if (!images[`/src/images/teams/${team}_text.png`]) throw new Error(`"src/images/teams/${team}_text.png" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<div class="relative bg-gray-300 w-[415px] h-[430px] snap-start">
-    <div class=`${gameColors[game]} bg-cover w-[415px] h-[15px] flex flex-col`>
+<div class="relative bg-gray-300 w-415 h-430 snap-start">
+    <div class=`${gameColors[game]} bg-cover w-415 h-15 flex flex-col`>
     </div>
     <div class="p-3.5">
         <div class="flex flex-row justify-between">

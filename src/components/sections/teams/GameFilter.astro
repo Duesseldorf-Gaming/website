@@ -11,7 +11,7 @@ const {game} = Astro.props;
 
 let games = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"];
 ---
-<div class="top-[210px] pb-[100px] z-20 flex flex-wrap gap-[20px] bg-gray-400 ">
+<div class="top-210 pb-100 z-20 flex flex-wrap gap-20 bg-gray-400 ">
     {games.map((gameX) => (
             (gameX === "counter_strike")
                 ? <FilterButtonCS game={gameX} selected={game === gameX} url={`/unsere_teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButtonCS>

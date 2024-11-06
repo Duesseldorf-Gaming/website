@@ -1,21 +1,29 @@
 ---
+import { Image } from 'astro:assets';
+import Button from "@components/ui/elements/buttons/Button.astro";
 
-import Button from "../../ui/elements/buttons/Button.astro";
+import image from "@images/image.png"
 ---
 
 <div
-        class="bg-hero-pattern bg-fixed bg-cover bg-center h-svh min-h-[1000px] flex flex-col"
+        class="bg-hero-pattern bg-fixed bg-cover bg-center h-svh min-h-1000 flex flex-col overflow-hidden relative"
 >
-    <div class="ml-[100px] mr-[100px] min-h-full">
-        <h1 class="pt-[120px]">
+    <div class="absolute pl-560 pt-140">
+        <div class="min-h-890 h-890">
+            <Image class="min-h-890" src={image} alt="decoration of all games"></Image>
+        </div>
+    </div>
+    <div class="ml-100 mr-100 min-h-full z-10">
+        <h1 class="pt-120">
             <span class="text-8xl font-display">Düsseldorf</span><br/>
             <span class="text-8xl font-display">Gaming</span>
         </h1>
-        <p class="text-[24px] font-body max-w-[415px]">
+        <p class="text-2xl font-body max-w-415">
             Lorem ipsum dolor sit amet consectetur. Ullamcorper enim lorem pretium tristique.
         </p>
-        <div class="pt-[120px]">
+        <div class="pt-120">
             <Button text="TEAM BEITRETEN" link="https://forms.gle/3AvgxKSjN7grZt9x7"></Button>
         </div>
+
     </div>
 </div>
