@@ -23,11 +23,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>('src/images/players/
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/images/players/*.{jpeg,jpg}"`);
 ---
 
-<div class="w-[350px] h-[450px] relative">
-	<div class=`bg-gray-200 bg-cover w-[350px] h-[360px] flex flex-col card-noclip`>
+<div class="w-350 h-450 relative">
+	<div class=`bg-gray-200 bg-cover w-350 h-360 flex flex-col card-noclip`>
 		<Image class="card-noclip h-full" src={images[imagePath]()} alt={name} height="360" width="360" ></Image>
 	</div>
-	<div class="bg-gray-300 w-[350px] h-[125px] card-clip flex flex-col absolute top-[325px] p-3.5 pr-5">
+	<div class="bg-gray-300 w-350 h-125 card-clip flex flex-col absolute top-325 p-3.5 pr-5">
 		<div class="flex">
 			<span class="font-body font-bold text-white text-4xl">{name||"Max Mustermann"}</span>
 		</div>

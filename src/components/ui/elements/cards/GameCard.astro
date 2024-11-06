@@ -11,12 +11,12 @@ else if (!images[`/src/images/games/${game}-hover.png`]) throw new Error(`"/src/
 else if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"/src/images/games/${game}-icon.svg" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
 else if (!images[`/src/images/games/${game}-reg.png`]) throw new Error(`"/src/images/games/${game}-reg.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
 ---
-<div class="min-w-[160px] min-h-[160px] w-[160px] h-[160px] xl:w-[560px] xl:h-[250px] group">
-    <div class=`relative p-[40px] xl:p-0 bg-gray-300 ${gameImages[game]} grayscale content-center bg-cover min-w-full min-h-full max-w-full max-h-full block group-hover:hidden`>
-        <Image class="block xl:hidden max-h-[80px]" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${game} teams` height="250" width="560" ></Image>
+<div class="min-w-160 min-h-160 w-160 h-160 xl:w-560 xl:h-250 group">
+    <div class=`relative p-40 xl:p-0 bg-gray-300 ${gameImages[game]} grayscale content-center bg-cover min-w-full min-h-full max-w-full max-h-full block group-hover:hidden`>
+        <Image class="block xl:hidden max-h-80" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${game} teams` height="250" width="560" ></Image>
         <Image class="hidden xl:block h-full max-w-full max-h-fit" src={images[`/src/images/games/${game}-reg.png`]()} alt=`${game} teams` height="250" width="560" ></Image>
     </div>
-    <div class=`relative p-[40px] xl:p-0 ${gameColors[game]} ${gameImages[game]} content-center bg-cover min-w-full min-h-full max-w-full max-h-full hidden group-hover:block`>
+    <div class=`relative p-40 xl:p-0 ${gameColors[game]} ${gameImages[game]} content-center bg-cover min-w-full min-h-full max-w-full max-h-full hidden group-hover:block`>
         <Image class="block xl:hidden" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${game} teams` height="250" width="560" ></Image>
         <Image class="hidden xl:block h-full max-w-full max-h-fit" src={images[`/src/images/games/${game}-hover.png`]()} alt=`${game} teams` height="250" width="560" ></Image>
     </div>

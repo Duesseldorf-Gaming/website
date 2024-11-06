@@ -33,23 +33,23 @@ if (!images[`/src/images/teams/${entry.data.name}.png`]) throw new Error(`"src/i
 const { Content } = await entry.render();
 ---
 <MainLayout>
-    <div class="flex pb-[100px]">
-        <div class="absolute z-20 w-[890px] justify-items-end pr-[20px]">
+    <div class="flex pb-100">
+        <div class="absolute z-20 w-890 justify-items-end pr-20">
             <Image src={images[`/src/images/teams/${entry.data.name}.png`]()} alt={entry.data.name} height=100 />
         </div>
-        <div class="w-[890px] h-[430px] bg-gray-200 image-clip justify-items-end">
+        <div class="w-890 h-430 bg-gray-200 image-clip justify-items-end">
 
         </div>
-        <div class="flex flex-col ml-[20px]">
+        <div class="flex flex-col ml-20">
             <h1 class="font-display text-8xl" >DG {entry.data.name}</h1>
-            <div class="flex flex-row pt-[10px] space-x-8">
+            <div class="flex flex-row pt-10 space-x-8">
                 <div class="place-self-auto">
                     <Image src={uniliga} alt="Uniliga logo" height=30 />
                 </div>
                 <League league={entry.data.league} game={entry.data.game}></League>
             </div>
             <span class="pt-8 text-2xl font-body font-extrabold text-gray-100">EST. {entry.data.established}</span>
-            <div class="flex flex-col-reverse max-w-[850px] h-full">
+            <div class="flex flex-col-reverse max-w-850 h-full">
                 <div class="text-wrap h-fit text-2xl">
                     <Content/>
                 </div>
