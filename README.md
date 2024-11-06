@@ -29,9 +29,6 @@
 ```
 
 ## 👤 Player Files
-> [!IMPORTANT]
-> Filename has to be fully lowercase!
-
 > [!CAUTION]
 > Delete any tags that aren't being used. Not doing so will fail the deployment
 ```yaml
@@ -54,9 +51,6 @@ social:
 | twitch  |    ❌     | url to the twitch account  |
 
 ## 👥 Team Files
-> [!IMPORTANT]
-> Filename has to be fully lowercase!
-
 > [!CAUTION]
 > Delete any tags that aren't being used. Not doing so will fail the deployment
 
@@ -90,6 +84,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 | captain     |    ✅     | all lower case name of the player file ('norial' for 'Norial.md')                       |
 | players     |    ❌     | array or filenames ( \[player1, player2, player3\] for 'Player1.md', 'Player2.md', ...) |
 | analysts    |    ❌     | array or filenames ( \[player1, player2, player3\] for 'Player1.md', 'Player2.md', ...) |
+
 Team description text is directly under the `---` with a max of 210 chars including spaces and punctuation.
 
 
