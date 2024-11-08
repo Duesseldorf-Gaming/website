@@ -4,7 +4,7 @@ game: ""
 league: ""
 established: ""
 uniliga: ""
-team_image: ""
+team_image: "/images/team_images/placeholder.jpg"
 manager: 
 coach:
 captain: 

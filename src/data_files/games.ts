@@ -4,6 +4,7 @@ export const gameColors: any = {
     rocket_league: 'bg-rocket',
     overwatch: 'bg-overwatch',
     counter_strike: 'bg-white',
+    rainbow: 'bg-rainbow',
 }
 
 export const gameColorsHover: any = {
@@ -12,6 +13,7 @@ export const gameColorsHover: any = {
     rocket_league: 'hover:bg-rocket',
     overwatch: 'hover:bg-overwatch',
     counter_strike: 'hover:bg-white',
+    rainbow: 'hover:bg-rainbow',
 }
 
 export const gameTextColors: any = {
@@ -20,6 +22,7 @@ export const gameTextColors: any = {
     rocket_league: 'text-rocket',
     overwatch: 'text-overwatch',
     counter_strike: 'text-white',
+    rainbow: 'text-rainbow',
 }
 
 export const gameImages: any = {
@@ -28,6 +31,7 @@ export const gameImages: any = {
     rocket_league: 'xl:bg-rocket_league-image',
     overwatch: 'xl:bg-overwatch-image',
     counter_strike: 'xl:bg-counter_strike-image',
+    rainbow: 'xl:bg-rainbow-image',
 }
 
 export const gameNames: any = {
@@ -36,6 +40,7 @@ export const gameNames: any = {
     rocket_league: 'Rocket League',
     overwatch: 'Overwatch',
     counter_strike: 'Counter Strike',
+    rainbow: 'Rainbow 6 Siege',
 }
 
 export default {

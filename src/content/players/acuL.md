@@ -1,4 +1,4 @@
 ---
-tag: acuL
-image: /images/players/placeholder.jpg
+tag: "acuL"
+image: "/images/players/placeholder.jpg"
 ---

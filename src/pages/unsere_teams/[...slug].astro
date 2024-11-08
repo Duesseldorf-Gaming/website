@@ -30,15 +30,21 @@ if (entry.data.analysts) analysts = await getEntries(entry.data.analysts);
 
 const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*.{jpeg,jpg,png,gif}')
 if (!images[`/src/images/teams/${entry.data.name}.png`]) throw new Error(`"src/images/teams/${entry.data.name}.png" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
+
+const teamImage = import.meta.glob<{ default: ImageMetadata }>('src/images/team_images/*.{jpeg,jpg}')
+if (!teamImage[`/src${entry.data.team_image}`] || !teamImage[`/src${entry.data.team_image}`]) throw new Error(`"src${entry.data.team_image}" does not exist in glob: "src/images/teams/*.{jpeg,jpg}"`);
+
 const { Content } = await entry.render();
 ---
 <MainLayout>
-    <div class="flex pb-100">
-        <div class="absolute z-20 w-890 justify-items-end pr-20">
-            <Image src={images[`/src/images/teams/${entry.data.name}.png`]()} alt={entry.data.name} height=100 />
-        </div>
-        <div class="w-890 h-430 bg-gray-200 image-clip justify-items-end">
-
+    <div class="flex flex-wrap pb-100">
+        <div class="w-850">
+            <div class="absolute z-20 w-850 justify-items-end">
+                <Image src={images[`/src/images/teams/${entry.data.name}.png`]()} alt={entry.data.name} height=100 />
+            </div>
+            <div class="w-850 h-430 bg-gray-200 image-clip justify-items-end">
+                <Image src={teamImage[`/src${entry.data.team_image}`]()} alt="" height="430" width=850></Image>
+            </div>
         </div>
         <div class="flex flex-col ml-20">
             <h1 class="font-display text-8xl" >DG {entry.data.name}</h1>

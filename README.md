@@ -8,7 +8,7 @@
   * [👤 Player Files](#-player-files)
   * [👥 Team Files](#-team-files)
 * [🧞 Commands](#-commands)
-  * [👀 Want to learn more?](#-want-to-learn-more)
+  * [👀 Want to learn more about Astro?](#-want-to-learn-more-about-astro)
 <!-- TOC -->
 
 # 🚀 Project Content File Structure
@@ -23,6 +23,8 @@
 └── images/
     ├── players/
     │   └── imagename.jpg
+    ├── team_images/
+    │   └── imagename.jpg
     └── teams/
         ├── Teamname.png
         └── Teamname_text.png
@@ -35,7 +37,7 @@
 ---
 tag: ""
 name: ""
-image: /images/players/placeholder.jpg
+image: "/images/players/placeholder.jpg"
 social:
   youtube: ""
   twitch: ""
@@ -61,7 +63,7 @@ game: ""
 league: ""
 established: ""
 uniliga: ""
-team_image: ""
+team_image: "/images/team_images/placeholder.jpg"
 manager:
 coach:
 captain:
@@ -101,6 +103,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 👀 Want to learn more about Astro?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [the documentation](https://docs.astro.build) or jump into the [Astro Discord server](https://astro.build/chat).

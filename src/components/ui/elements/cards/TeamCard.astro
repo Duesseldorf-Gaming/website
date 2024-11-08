@@ -11,21 +11,22 @@ const { game, league, team } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*_text.{jpeg,jpg,png,gif}')
 if (!images[`/src/images/teams/${team}_text.png`]) throw new Error(`"src/images/teams/${team}_text.png" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
 ---
-
-<div class="relative bg-gray-300 w-415 h-430 snap-start">
-    <div class=`${gameColors[game]} bg-cover w-415 h-15 flex flex-col`>
+<div class="relative bg-gray-300 w-350 h-320 lg:w-415 lg:h-430 snap-start">
+    <div class=`${gameColors[game]} bg-cover w-full h-15 flex flex-col`>
     </div>
     <div class="p-3.5">
         <div class="flex flex-row justify-between">
-            <div class="flex place-self-center">
+            <div class="flex place-self-center h-26 w-104 lg:h-30 lg:w-auto">
                 <Image src={uniliga} alt="Uniliga logo" height=30 />
             </div>
             <div class="">
                 <span class="font-body font-bold text-2xl">{league||"1"} LIGA</span>
             </div>
         </div>
-        <div class="pl-14 pt-14 h-full">
-            <ImageLink image={images[`/src/images/teams/${team}_text.png`]()} size=240 alt=`DG ${team}` url=`/unsere_teams/${team.toLowerCase()}`></ImageLink>
+        <div class="w-full">
+            <div class="mt-4 mx-auto xs:ml-8 lg:m-0 lg:pl-14 lg:pt-14 w-250 lg:w-full lg:h-full">
+                <ImageLink image={images[`/src/images/teams/${team}_text.png`]()} size=240 alt=`DG ${team}` url=`/unsere_teams/${team.toLowerCase()}`></ImageLink>
+            </div>
         </div>
     </div>
 </div>
