@@ -9,7 +9,7 @@ const teamsCollection = defineCollection({
         league: z.string(),
         established: z.string(),
         uniliga: z.string().optional(),
-        team_image: z.string().optional(),
+        team_image: z.string().default('/images/team_images/placeholder.jpg'),
         manager: reference('players').optional(),
         coach: reference('players').optional(),
         captain: reference('players'),

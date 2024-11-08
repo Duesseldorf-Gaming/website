@@ -11,16 +11,11 @@ const { game, url, selected } = Astro.props;
 ---
 
 <a href={url}>
-    <div class=`wrapper570 button-clip-normal h-100 w-415 items-center bg-gray-300 flex gap-x-30 pl-44 font-display text-4xl ${selected ? strings.gameColors[game] + " text-gray-400" : strings.gameColorsHover[game] + " " + strings.gameTextColors[game] + " hover:text-gray-400"} justify-start`>
-        <svg class={selected ? "" : "element571"} width="83" height="29" viewBox="0 0 196 70" xmlns="http://www.w3.org/2000/svg">
+    <div class=`button-clip-normal group h-50 w-100 md:h-100 md:w-415 items-center bg-gray-300 flex gap-x-30 md:pl-44 text-4xl justify-center md:justify-start ${selected ? strings.gameColors[game] : strings.gameColorsHover[game]}`>
+        <svg class=`h-20 md:h-full ${selected ? "fill-gray-400" : "fill-white group-hover:fill-gray-400"}` width="83" height="29" viewBox="0 0 196 70" xmlns="http://www.w3.org/2000/svg">
             <path d="M120.3 16.2C122.3 17.1 124.1 18 125.9 18.8C127.2 19.3 127.6 20.1 126.9 21.4C126.4 22.4 126 23.4 125.5 24.5C124.4 27 124.5 27.1 127.1 27.1C130.2 27.1 133.3 27.1 136.3 27.1C146.3 27.1 156.3 27.1 166.3 27.1C174.7 27.1 180.5 35.2 177.8 43.1C176.1 48 174.2 52.8 171.6 57.3C167.2 65 160.4 69.4 151.5 69.7C130.8 70.2 110.1 69.8 89.3998 69.9C87.2998 69.9 87.0998 69.6 87.8998 67.8C89.1998 64.7 90.5998 61.7 91.8998 58.6C93.0998 55.7 95.1998 54.4 98.3998 54.4C116 54.4 133.5 54.4 151.1 54.4C153.3 54.4 154.5 53.8 155.2 51.6C156.1 48.7 157.7 46 158.6 43.1C157.5 42.6 156.6 42.8 155.7 42.8C143 42.8 130.2 42.8 117.5 42.8C110.6 42.8 106.2 39.1 104.7 32.4C104.2 30.1 104.8 28.1 105.6 26.1C107.1 22.4 108.6 18.7 110.3 15.1C115 5.20002 122.8 0.300016 133.3 0.200016C153.6 -0.0999841 173.9 0.200016 194.2 0.100016C195.7 0.100016 196.3 0.300016 195.6 2.00002C194.2 5.00002 193 8.00002 191.7 11C190.4 14 188.4 15.5 184.9 15.6C169.6 15.9 154.4 15.6 139.1 15.6C133.4 15.6 128.2 15.5 122.1 15.5C116 15.5 121 15.3 120.3 16.1V16.2Z"/>
             <path d="M27.6 16.2C29.4 17 31.2 17.9 33.1 18.6C34.5 19.2 34.8 19.8 34.1 21.3C29.9 31 25.8 40.7 21.6 50.4C21.4 50.9 21.2 51.3 21 51.8C20.1 54.1 20.1 54.1 22.5 54.1C38.9 54.1 55.2 54.1 71.6 54.1C72.2 54.1 72.9 54.1 73.5 54.1C74.5 54.1 74.9 54.4 74.4 55.5C72.8 59.1 71.2 62.7 69.6 66.2C68.6 68.3999 66.9 69.5 64.5 69.5C64.3 69.5 64.1 69.5 63.9 69.5C46.3 69.5 28.8 69.8 11.2 69.4C3.50002 69.2 -1.89998 61.5 0.500022 54.2C2.30002 48.6 5.00002 43.3 7.20002 37.9C10.5 30.1 13.7 22.3 17.2 14.6C21.6 5.39996 29.1 0.499955 39.3 0.299955C58.2 -0.200045 77 -4.46141e-05 95.8 -4.46141e-05C98.1 -4.46141e-05 98.1 -4.45843e-05 97.2 2.19996C96 4.99996 94.8 7.69995 93.7 10.5C92.4 13.9 90.1 15.5 86.3 15.4C68.1 15.4 49.9 15.4 31.7 15.4C30.4 15.4 29.2 15.4 27.6 15.4C27.6 15.6 27.6 15.8 27.6 15.9V16.2Z"/>
         </svg>
-        {strings.gameNames[game]}
+        <span class=`hidden md:block font-display ${selected ? "text-gray-400" : strings.gameTextColors[game] + " group-hover:text-gray-400"}`>{strings.gameNames[game]}</span>
     </div>
 </a>
-
-<style>
-    .element571 { fill: #F3F3F3; }
-    .wrapper570:hover .element571 { fill: #1A1A1A; }
-</style>

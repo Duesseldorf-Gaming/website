@@ -9,16 +9,16 @@ import twitch from "@images/other_brands/TwitchGlitchWhite.png"
 import instagram from "@images/other_brands/Instagram_Glyph_White.png"
 import twitter from "@images/other_brands/twitter_logo-white.png"
 ---
-<footer class="max-h-320 h-320 w-full bg-gray-500">
+<footer class="max-h-320 h-fit w-full bg-gray-500">
     <DiscordBanner link={strings.socialLinks.discord}></DiscordBanner>
     <div class="h-220 flex">
-        <div class="h-220 z-10 flex items-center w-full mx-100">
-            <ul class="space-y-5 min-w-415">
+        <div class="h-220 z-10 flex items-center flex-wrap lg:flex-nowrap w-full mx-50 1.5xl:mx-100">
+            <ul class="w-full py-8 xs:py-0 lg:w-fit space-y-5 min-w-fit xs:columns-3 lg:columns-1 lg:min-w-415">
                 {strings.footerLinks.map(link => (
-                        <li><FooterLink link={link.url} name={link.name} /></li>
+                        <li class="text-center lg:text-left"><FooterLink link={link.url} name={link.name} /></li>
                 ))}
             </ul>
-            <ul class="columns-3 min-w-fit gap-5 pl-20">
+            <ul class="w-full lg:w-fit justify-items-center columns-3 min-w-fit gap-5 lg:pl-20">
                 <li class="mt-0 min-h-50">
                     <ImageLink size="50" image={instagram} alt="Instagram" url={strings.socialLinks.instagram}></ImageLink>
                 </li>
@@ -29,14 +29,14 @@ import twitter from "@images/other_brands/twitter_logo-white.png"
                     <ImageLink size="50" image={twitch} alt="Twitch" url={strings.socialLinks.twitch}></ImageLink>
                 </li>
             </ul>
-            <div class="w-full h-full flex flex-row-reverse items-end">
+            <div class="w-full lg:h-full flex flex-row-reverse justify-center lg:justify-normal lg:items-end">
                 <div class="flex flex-col items-end space-y-3">
-                    <Logo></Logo>
+                    <Logo class:list="hidden lg:block"></Logo>
                     <span class="pb-10 font-body font-bold text-gray-100 text-right">Copyright © 2024 Hochschulsport Düsseldorf e.V.</span>
                 </div>
             </div>
         </div>
-        <div class="absolute overflow-clip h-220 w-full max-w-1920 flex flex-row-reverse">
+        <div class="hidden absolute overflow-clip h-220 w-full max-w-1920 lg:flex flex-row-reverse">
             <svg class="fill-gray-400 min-h-220 min-w-704" width="704" height="220" viewBox="0 0 704 220" xmlns="http://www.w3.org/2000/svg">
                 <path d="M603.884 235.845H685.507V174.015L603.884 235.845Z"/>
                 <path d="M377.507 177.84L326.174 199.513L229.884 156.487L357.42 162.861L364.435 167.96L365.71 168.916L377.507 177.84Z"/>

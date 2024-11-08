@@ -17,8 +17,8 @@ if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"src/images/
 ---
 
 <a href={url}>
-    <div class=`button-clip-normal h-100 w-415 items-center bg-gray-300 flex gap-x-30 pl-44 font-display text-4xl ${selected ? strings.gameColors[game] + " text-white" : strings.gameColorsHover[game] + " " + strings.gameTextColors[game] + " hover:text-white"} justify-start`>
-        <Image class="card-noclip h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="44"></Image>
-        {strings.gameNames[game]}
+    <div class=`button-clip-normal group h-50 w-100 mds:h-100 mds:w-415 items-center bg-gray-300 flex gap-x-30 md:pl-44 text-4xl justify-center md:justify-start ${selected ? strings.gameColors[game] : strings.gameColorsHover[game]}`>
+        <Image class="card-noclip h-30 mds:h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="44"></Image>
+        <span class=`hidden mds:block font-display ${selected ? "text-white" : strings.gameTextColors[game] + " group-hover:text-white"}`>{strings.gameNames[game]}</span>
     </div>
 </a>

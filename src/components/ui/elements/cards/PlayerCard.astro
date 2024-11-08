@@ -27,7 +27,7 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
 	<div class=`bg-gray-200 bg-cover w-350 h-360 flex flex-col card-noclip`>
 		<Image class="card-noclip h-full" src={images[imagePath]()} alt={name} height="360" width="360" ></Image>
 	</div>
-	<div class="bg-gray-300 w-350 h-125 card-clip flex flex-col absolute top-325 p-3.5 pr-5">
+	<div class="bg-gray-300 w-350 h-125 card-clip flex flex-col absolute top-320 p-3.5 pr-5">
 		<div class="flex">
 			<span class="font-body font-bold text-white text-4xl">{name||"Max Mustermann"}</span>
 		</div>
@@ -38,12 +38,12 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
 			<div class="flex place-self-center">
 				{youtube ?
 					<div class="pl-2">
-						<ImageLink image={youtubeImage} alt="YouTube" url={youtubeUrl} size="40"></ImageLink>
+						<ImageLink image={youtubeImage} alt="YouTube" url={youtubeUrl} rel="noopener noreferrer external" target="_blank" size="40"></ImageLink>
 					</div> :
 					""}
 				{twitch ?
 					<div class="pl-2">
-						<ImageLink image={twitchImage} alt="Twitch" url={twitchUrl} size="40"></ImageLink>
+						<ImageLink image={twitchImage} alt="Twitch" url={twitchUrl} rel="noopener noreferrer external" target="_blank" size="40"></ImageLink>
 					</div> :
 					""}
 			</div>

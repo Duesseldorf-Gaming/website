@@ -40,7 +40,7 @@ let gameTeams = {
 }
 ---
 
-<div class="flex flex-wrap gap-20">
+<div class="flex flex-wrap gap-3.5 md:gap-20 justify-center 3xl:justify-normal">
     {games.map((game) => (
         gameTeams[game].map((team) => (
             <TeamCard game={game} league={team.data.league} team={team.data.name}></TeamCard>
