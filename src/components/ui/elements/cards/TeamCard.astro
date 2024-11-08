@@ -11,7 +11,6 @@ const { game, league, team } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*_text.{jpeg,jpg,png,gif}')
 if (!images[`/src/images/teams/${team}_text.png`]) throw new Error(`"src/images/teams/${team}_text.png" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
 ---
-
 <div class="relative bg-gray-300 w-350 h-320 lg:w-415 lg:h-430 snap-start">
     <div class=`${gameColors[game]} bg-cover w-full h-15 flex flex-col`>
     </div>
