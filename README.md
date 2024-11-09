@@ -15,19 +15,20 @@
 
 ```text
 /src/
-├── players/
-│   ├── players/
-│   │   └── playername.md
-│   ├── teams/
-│   │   └── teamname.md
-└── images/
+└── content/
     ├── players/
-    │   └── imagename.jpg
-    ├── team_images/
-    │   └── imagename.jpg
-    └── teams/
-        ├── Teamname.png
-        └── Teamname_text.png
+    │   ├── players/
+    │   │   └── playername.md
+    │   ├── teams/
+    │   │   └── teamname.md
+    └── images/
+        ├── players/
+        │   └── imagename.jpg
+        ├── team_images/
+        │   └── imagename.jpg
+        └── teams/
+            ├── Teamname.png
+            └── Teamname_text.png
 ```
 
 ## 👤 Player Files
