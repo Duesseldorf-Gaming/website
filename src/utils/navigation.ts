@@ -1,12 +1,12 @@
 // An array of links for navigation bar of the index page
 const indexNavBarLinks = [
     { name: "WER WIR SIND", url: "/" },
-    { name: "UNSERE TEAMS", url: "/unsere_teams" },
+    { name: "UNSERE TEAMS", url: "/teams" },
 ];
 // An array of links for navigation bar
 const navBarLinks = [
     { name: "WER WIR SIND", url: "/" },
-    { name: "UNSERE TEAMS", url: "/unsere_teams" },
+    { name: "UNSERE TEAMS", url: "/teams" },
 ];
 // An object of links for social icons
 const socialLinks = {
