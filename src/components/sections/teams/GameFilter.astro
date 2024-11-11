@@ -14,7 +14,7 @@ const games = ["valorant", "league", "overwatch", "rocket_league", "counter_stri
 <div class="top-210 pb-100 z-20 flex flex-wrap mds:gap-20 bg-gray-400 justify-center 3xl:justify-normal">
     {games.map((gameX) => (
             (gameX === "counter_strike")
-                ? <FilterButtonCS game={gameX} selected={game === gameX} url={`/unsere_teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButtonCS>
-                : <FilterButton game={gameX} selected={game === gameX} url={`/unsere_teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButton>
+                ? <FilterButtonCS game={gameX} selected={game === gameX} url={`/teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButtonCS>
+                : <FilterButton game={gameX} selected={game === gameX} url={`/teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButton>
     ))}
 </div>
