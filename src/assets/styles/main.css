@@ -41,11 +41,11 @@ h3 {
     font-size: 48px;
 }
 
-@media not all and (min-width: 860px) {
+/*@media not all and (min-width: 860px) {
     .button-clip-normal {
         clip-path: polygon(85% 0, 100% 30%, 100% 100%, 25% 100%, 0% 50%, 0 0);
     }
-}
+}*/
 
 @layer base {
     @font-face {
