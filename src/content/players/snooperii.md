@@ -1,4 +1,4 @@
 ---
 tag: "snooperii"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/snooperii.jpg"
 ---

@@ -7,8 +7,8 @@ interface Props {
 const { text, link } = Astro.props;
 ---
 
-<a class="h-fit" href={link}>
-    <div class="button-clip-normal h-100 w-415 text-center align-middle text-base leading-100 bg-primary">
-        <span class="w-full align-middle inline-block leading-normal font-display text-6xl text-gray-500">{text}</span>
+<a class="h-fit" rel="noopener noreferrer external" target="_blank" href={link}>
+    <div class="button-clip-normal h-65 sm:h-100 w-270 sm:w-415 text-center align-middle text-base leading-100 bg-primary flex items-center">
+        <span class="w-full align-middle inline-block font-display text-4xl sm:text-6xl leading-normal text-gray-500">{text}</span>
     </div>
 </a>
