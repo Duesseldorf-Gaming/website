@@ -6,6 +6,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 import PlayerCard from "@components/ui/elements/cards/PlayerCard.astro";
 import League from "@components/ui/links/League.astro";
 import uniliga from "@images/other_brands/uniliga_wordmark+icon_teal.png"
+import uniligaAlt from "@images/other_brands/uniliga_wordmark+icon_white.png"
 import {Image} from "astro:assets";
 
 // 1. Generate a new path for every collection entry
@@ -50,7 +51,12 @@ const { Content } = await entry.render();
             <h1 class="font-display text-8xl" >DG {entry.data.name}</h1>
             <div class="flex flex-row pt-10 space-x-8">
                 <div class="place-self-auto">
-                    <Image src={uniliga} alt="Uniliga logo" height=30 />
+                {entry.data.uniliga ?
+                    <a href={entry.data.uniliga} rel="noopener noreferrer external" target="_blank">
+                        <Image src={uniliga} alt="Uniliga logo" height=30 />
+                    </a> :
+                    <Image src={uniligaAlt} alt="Uniliga logo" height=30 />
+                }
                 </div>
                 <League league={entry.data.league} game={entry.data.game}></League>
             </div>
