@@ -5,8 +5,27 @@
     font-family: 'NunitoSans', sans-serif;
 }
 
+.global-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: 460px) {
+            padding-left: 50px;
+            padding-right: 50px;
+    }
+
+    @media (min-width: 1337px) {
+            padding-left: 100px;
+            padding-right: 100px;
+    }
+}
+
 .button-clip-normal {
     clip-path: polygon(0 0, 95% 0, 100% 100%, 10% 100%, 0 60%);
+
+    @media not all and (min-width: 960px) {
+        clip-path: polygon(85% 0, 100% 30%, 100% 100%, 25% 100%, 0% 50%, 0 0);
+    }
 }
 
 .button-clip-normal-static {
@@ -22,7 +41,20 @@
 }
 
 .image-clip {
-    clip-path: polygon(0% 0%, 60% 0%, 100% 70%, 100% 100%, 10% 100%, 0% 80%);
+    clip-path: polygon(0 0, 60% 0, 100% 70%, 100% 100%, 10% 100%, 0 80%);
+
+    @media not all and (min-width: 1536px) {
+        clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 40% 100%, 0 50%);
+    }
+
+    @media not all and (min-width: 960px) {
+        clip-path: polygon(0 0, 70% 0, 100% 50%, 100% 100%, 0 100%, 0 100%);
+    }
+}
+
+.background {
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 h1, h2, h3 {
@@ -39,12 +71,6 @@ h2 {
 
 h3 {
     font-size: 48px;
-}
-
-@media not all and (min-width: 860px) {
-    .button-clip-normal {
-        clip-path: polygon(85% 0, 100% 30%, 100% 100%, 25% 100%, 0% 50%, 0 0);
-    }
 }
 
 @layer base {

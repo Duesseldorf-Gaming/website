@@ -4,11 +4,10 @@ import NavLink from "@components/ui/links/NavLink.astro";
 import strings from "@utils/navigation.ts";
 import Logo from "@components/Logo.astro";
 
-// Select the correct translation based on the page's lang prop:
 ---
 
 <!-- Main header component -->
-<header class="py-20 px-20 xs:px-50 1.5xl:px-100 md:py-50 sticky top-0 z-50 bg-gray-500">
+<header class="global-padding py-20 md:py-50 sticky top-0 z-50 bg-gray-500">
     <!-- Navigation container -->
     <nav class="flex " aria-label="Global">
         <div class="">
@@ -18,7 +17,7 @@ import Logo from "@components/Logo.astro";
                 </a>
         </div>
         <!-- Contains navigation links -->
-        <div class="flex flex-col items-end basis-full overflow-hidden">
+        <div class="flex flex-col md:flex-row-reverse items-end basis-full overflow-hidden">
             <!-- Navigation links container -->
             <input class="menu-btn hidden" type="checkbox" id="menu-btn" />
             <label class="menu-icon md:hidden cursor-pointer inline-block float-right pt-30 relative select-none" for="menu-btn">
@@ -27,26 +26,21 @@ import Logo from "@components/Logo.astro";
                 h-2 w-14 relative duration-200 transition-[background] ease-out
                 "/>
             </label>
-            <div class="menu mt-50 md:flex gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:ps-7">
+            <div class="
+            menu mt-50 clear-both max-h-0 transition-[max-height] duration-200 ease-out
+            md:max-h-fit md:flex gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:ps-7
+            ">
                 <ul class="flex flex-col gap-y-2.5 items-end md:flex-row md:gap-x-12">
-                    <!-- Navigation links and Authentication component -->
+                    <!-- Navigation links -->
                     {strings.indexNavBarLinks.map(link => (
                             <li><NavLink link={link.url} name={link.name} /></li>
                     ))}
                 </ul>
             </div>
         </div>
-        <!-- Hamburger menu -->
-
     </nav>
 </header>
 <style>
-    .menu {
-        clear: both;
-        max-height: 0;
-        transition: max-height .2s ease-out;
-    }
-
     .navicon:before,
     .navicon:after {
         content: '';
@@ -55,10 +49,6 @@ import Logo from "@components/Logo.astro";
         position: absolute;
         transition: all .2s ease-out;
         width: 100%;
-    }
-
-    .menu-btn {
-        display: none;
     }
 
     .menu-btn:checked ~ .menu {

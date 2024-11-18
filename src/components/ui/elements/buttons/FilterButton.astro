@@ -17,8 +17,11 @@ if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"src/images/
 ---
 
 <a href={url}>
-    <div class=`button-clip-normal group h-50 w-100 mds:h-100 mds:w-415 items-center bg-gray-300 flex gap-x-30 md:pl-44 text-4xl justify-center md:justify-start ${selected ? strings.gameColors[game] : strings.gameColorsHover[game]}`>
-        <Image class="card-noclip h-30 mds:h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="44"></Image>
-        <span class=`hidden mds:block font-display ${selected ? "text-white" : strings.gameTextColors[game] + " group-hover:text-white"}`>{strings.gameNames[game]}</span>
+    <div class=`button-clip-normal group h-50 w-100 md:h-100 md:w-415 items-center bg-gray-300 flex gap-x-30 md:pl-44 text-4xl justify-center md:justify-start ${selected ? strings.gameColors[game] : strings.gameColorsHover[game]}`>
+        <Image class="card-noclip h-30 md:h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="44"></Image>
+        <span class=`hidden md:block font-display ${selected ? "text-white" : strings.gameTextColors[game] + " group-hover:text-white"}`>{strings.gameNames[game]}</span>
+        <div class="md:hidden absolute h-50 w-100">
+            <div class=`absolute h-1 w-100 ${strings.gameColors[game]}`></div>
+        </div>
     </div>
 </a>
