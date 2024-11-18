@@ -16,6 +16,6 @@ if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"src/images/
 ---
 
 <div class="flex h-fit space-x-3">
-    <Image class="card-noclip h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="30"></Image>
-    <span class="text-2xl font-body font-extrabold">{league} Liga</span>
+    <Image class="card-noclip h-20 md:h-30 w-auto" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="30"></Image>
+    <span class="text-base md:text-2xl font-body font-extrabold">{league} Liga</span>
 </div>
