@@ -1,6 +1,6 @@
 ---
 tag: Norial
-image: /images/players/placeholder.jpg
+image: /images/players/norial.gif
 social:
   twitch: https://twitch.tv/noorial
 ---
