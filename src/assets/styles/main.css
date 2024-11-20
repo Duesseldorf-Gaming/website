@@ -54,11 +54,14 @@
 
 .background {
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
 h1, h2, h3 {
     font-family: 'BebasNeue-Regular', sans-serif;
+    line-height: normal;
 }
 
 h1 {
@@ -85,7 +88,32 @@ h3 {
     @font-face {
         font-family: 'NunitoSans';
         font-style: normal;
+        font-weight: 400;
         font-display: swap;
-        src: url(/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf) format('truetype');
+        src: url(/fonts/NunitoSans_10pt-Regular.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'NunitoSans';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(/fonts/NunitoSans_10pt-Medium.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'NunitoSans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(/fonts/NunitoSans_10pt-Bold.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'NunitoSans';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(/fonts/NunitoSans_10pt-Black.ttf) format('truetype');
     }
 }
