@@ -19,8 +19,8 @@ interface Props {
 const { image: imageURL, name, role, twitch, youtube, twitchUrl, youtubeUrl } = Astro.props;
 const imagePath = `/src${imageURL}`
 
-const images = import.meta.glob<{ default: ImageMetadata }>('src/images/players/*.{jpeg,jpg}')
-if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/images/players/*.{jpeg,jpg}"`);
+const images = import.meta.glob<{ default: ImageMetadata }>('src/images/players/*.{jpeg,jpg,gif}')
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/images/players/*.{jpeg,jpg,gif}"`);
 ---
 
 <div class="w-350 h-450 relative">
