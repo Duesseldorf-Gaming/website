@@ -19,7 +19,7 @@ const socialLinks = {
 const footerLinks = [
     { name: "IMPRESSUM", url: "/impressum" },
     { name: "DATENSHUTZERKLÄRUNG", url: "/datenschutz" },
-    { name: "UNSERE BRAND", url: "https://drive.google.com/drive/folders/165qdgKhidCU0BSc10ctLbj41p7AMspox?usp=sharing" },
+    { name: "UNSERE BRAND", url: "https://drive.google.com/drive/folders/165qdgKhidCU0BSc10ctLbj41p7AMspox?usp=sharing", external: true },
 ];
 
 export default {

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import TeamCard from "@components/ui/elements/cards/TeamCard.astro";
+import {activeGames} from "@data/constants";
 
 const valorantTeams = await getCollection('teams', ({ data }) => {
     return data.game === 'valorant';
@@ -17,26 +18,31 @@ const rocketLeagueTeams = await getCollection('teams', ({ data }) => {
 const csTeams = await getCollection('teams', ({ data }) => {
     return data.game === 'counter_strike';
 });
+const rainbowTeams = await getCollection('teams', ({ data }) => {
+    return data.game === 'rainbow';
+});
 valorantTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 leagueTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 overwatchTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 rocketLeagueTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 csTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
+rainbowTeams.reverse().sort((a, b) => (a.data.league > b.data.league) ? 1 : -1);
 
 interface Props {
-    games?: Array<"valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike">;
+    games?: Array<"valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike" | "rainbow">;
 }
 
 let { games } = Astro.props;
 
-if (games === undefined) games = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"];
+if (games === undefined) games = activeGames;
 
 let gameTeams = {
     "valorant": valorantTeams,
     "league": leagueTeams,
     "overwatch": overwatchTeams,
     "rocket_league": rocketLeagueTeams,
-    "counter_strike": csTeams
+    "counter_strike": csTeams,
+    "rainbow": rainbowTeams
 }
 ---
 

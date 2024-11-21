@@ -10,12 +10,13 @@ export async function getStaticPaths() {
         { params: { game: "rocket_league" } },
         { params: { game: "overwatch" } },
         { params: { game: "counter_strike" } },
+        { params: { game: "rainbow" } },
     ];
 }
 
 const { game } = Astro.params;
 ---
 <TransitionLayout>
-    <GameFilter game={game as "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike"}></GameFilter>
-    <TeamList games={[game as "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike"]}></TeamList>
+    <GameFilter game={game as "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike" | "rainbow"}></GameFilter>
+    <TeamList games={[game as "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike" | "rainbow"]}></TeamList>
 </TransitionLayout>
