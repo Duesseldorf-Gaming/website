@@ -17,7 +17,7 @@ const year = new Date().getFullYear()
         <div class="h-220 min-h-fit z-10 flex items-center flex-wrap lg:flex-nowrap w-full global-padding">
             <ul class="w-full py-8 xs:py-0 lg:w-fit space-y-5 min-w-fit xs:columns-3 lg:columns-1 lg:min-w-415">
                 {strings.footerLinks.map(link => (
-                        <li class="text-center lg:text-left"><FooterLink link={link.url} name={link.name} /></li>
+                        <li class="text-center lg:text-left"><FooterLink link={link.url} name={link.name} external=true /></li>
                 ))}
             </ul>
             <ul class="w-full lg:w-fit justify-items-center justify-center grid grid-cols-3 min-w-fit gap-5 lg:pl-20">

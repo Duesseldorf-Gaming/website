@@ -2,14 +2,13 @@
 
 import FilterButtonCS from "../../ui/elements/buttons/FilterButtonCS.astro";
 import FilterButton from "../../ui/elements/buttons/FilterButton.astro";
+import {activeGames as games} from "@data/constants";
 
 interface Props {
     game?: "valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike" | "rainbow";
 }
 
 const {game} = Astro.props;
-
-const games = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"];
 ---
 <div class="top-210 pb-100 z-20 flex flex-wrap gap-3.5 md:gap-20 bg-gray-400 justify-center 3xl:justify-normal">
     {games.map((gameX) => (
