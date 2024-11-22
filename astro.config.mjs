@@ -10,5 +10,5 @@ export default defineConfig({
       tailwind(),
       sitemap()
   ],
-  site: 'https://dg.test.definitelyareal.link',
+  site: 'https://test.duesseldorf-gaming.de',
 });
