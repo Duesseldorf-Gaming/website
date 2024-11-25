@@ -1,6 +1,4 @@
 ---
-
-import FilterButtonCS from "../../ui/elements/buttons/FilterButtonCS.astro";
 import FilterButton from "../../ui/elements/buttons/FilterButton.astro";
 import {activeGames as games} from "@data/constants";
 
@@ -12,8 +10,6 @@ const {game} = Astro.props;
 ---
 <div class="top-210 pb-100 z-20 flex flex-wrap gap-3.5 md:gap-20 bg-gray-400 justify-center 3xl:justify-normal">
     {games.map((gameX) => (
-            (gameX === "counter_strike")
-                ? <FilterButtonCS game={gameX} selected={game === gameX} url={`/teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButtonCS>
-                : <FilterButton game={gameX} selected={game === gameX} url={`/teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButton>
+            <FilterButton game={gameX} selected={game === gameX} url={`/teams/${game == gameX ? "" : gameX.toLowerCase()}`}></FilterButton>
     ))}
 </div>

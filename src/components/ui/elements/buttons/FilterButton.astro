@@ -1,8 +1,6 @@
 ---
-import type {ImageMetadata} from "astro";
-import {Image} from "astro:assets";
-
 import strings from "@data/games";
+import GameIcon from "../icons/GameIcon.astro";
 
 interface Props {
     game: string;
@@ -11,15 +9,12 @@ interface Props {
 }
 
 const { game, url, selected } = Astro.props;
-
-const images = import.meta.glob<{ default: ImageMetadata }>('src/images/games/*.{svg,png}')
-if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"src/images/games/${game}-icon.svg" does not exist in glob: "src/images/games/*.{svg}"`);
 ---
 
 <a href={url}>
     <div class=`button-clip-normal group h-50 w-100 md:h-100 md:w-415 items-center bg-gray-300 flex gap-x-30 md:pl-44 text-4xl justify-center md:justify-start ${selected ? strings.gameColors[game] : strings.gameColorsHover[game]}`>
-        <Image class="card-noclip h-30 md:h-full" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${strings.gameNames[game]}` height="44"></Image>
-        <span class=`hidden md:block font-display ${selected ? "text-white" : strings.gameTextColors[game] + " group-hover:text-white"}`>{strings.gameNames[game]}</span>
+        <GameIcon class=`h-30 md:h-44 w-fit max-w-50 md:max-w-70 ${game == "counter_strike" ? selected ? "fill-gray-400" : "fill-white group-hover:fill-gray-400" : ""}` game={game} />
+        <span class=`hidden md:block font-display ${game == "counter_strike" ? selected ? "text-gray-400" : strings.gameTextColors[game] + " group-hover:text-gray-400" : selected ? "text-white" : strings.gameTextColors[game] + " group-hover:text-white"}`>{strings.gameNames[game]}</span>
         <div class="md:hidden absolute h-50 w-100">
             <div class=`absolute h-1 w-100 ${strings.gameColors[game]}`></div>
         </div>
