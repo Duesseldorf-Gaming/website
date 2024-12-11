@@ -15,7 +15,7 @@ const year = new Date().getFullYear()
     <DiscordBanner link={strings.socialLinks.discord}></DiscordBanner>
     <div class="h-220 min-h-fit flex">
         <div class="h-220 min-h-fit z-10 flex items-center flex-wrap lg:flex-nowrap w-full global-padding">
-            <ul class="w-full py-8 xs:py-0 lg:w-fit space-y-5 min-w-fit xs:columns-3 lg:columns-1 lg:min-w-415">
+            <ul class="w-full py-8 sm:py-0 lg:w-fit space-y-5 min-w-fit sm:columns-3 lg:columns-1 lg:min-w-415">
                 {strings.footerLinks.map(link => (
                         <li class="text-center lg:text-left"><FooterLink link={link.url} name={link.name} external={link.external} /></li>
                 ))}

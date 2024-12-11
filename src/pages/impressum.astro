@@ -3,5 +3,57 @@ import MainLayout from "@layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-
+    <h1>Impressum</h1>
+    <section>
+        <h2>Angaben gemäß § 5 TMG:</h2>
+        <p>
+            Hochschulsport Düsseldorf e. V.<br/>
+            Geb. 28.01.00.36<br/>
+            Universitätsstr. 1<br/>
+            40225 Düsseldorf
+        </p>
+    </section>
+    <section>
+        <h2>Vertreten durch:</h2>
+        <p>
+            Vorsitzender:<br/>
+            Felix Klaus<br/>
+            Universitätsstr. 1<br/>
+            40225 Düsseldorf<br/>
+            Tel: 0211 81 13285<br/>
+            Fax: 0211 81 11857<br/>
+            E-Mail: <a href="mailto:felix.klaus@hss-d.de" class="text-gray-100 hover:text-white">felix.klaus@hss-d.de</a>
+        </p>
+        <p>
+            Stellvertreterin:<br/>
+            Alice Strauch<br/>
+            Universitätsstr. 1<br/>
+            40225 Düsseldorf<br/>
+            Tel: 0211 81 15701<br/>
+            Fax: 0211 81 11857<br/>
+            E-Mail: <a href="mailto:alice.strauch@hss-d.de" class="text-gray-100 hover:text-white">alice.strauch@hss-d.de</a>
+        </p>
+        <p>
+            Spartenleiter eSports:<br/>
+            Sedat, Dag<br/>
+            E-Mail: <a href="mailto:duesseldorfgaming@gmail.com" class="text-gray-100 hover:text-white break-all">duesseldorfgaming@gmail.com</a>
+        </p>
+    </section>
 </MainLayout>
+<style>
+    p {
+        margin-top: 2rem;
+    }
+    h2 {
+        padding-top: 5rem;
+    }
+    section {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+
+        @media (min-width: 768px) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+</style>

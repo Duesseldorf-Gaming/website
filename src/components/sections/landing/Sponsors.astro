@@ -1,6 +1,16 @@
 ---
+import {getCollection} from "astro:content";
+import type {ImageMetadata} from "astro";
+import {Image} from "astro:assets";
 
+const sponsors = await getCollection('sponsors');
+
+const images = import.meta.glob<{ default: ImageMetadata }>('src/images/sponsors/*.{jpeg,jpg,png,gif}')
 ---
-<div class="min-h-56 bg-white">
-
+<div class="min-h-56 bg-white flex flex-row justify-evenly items-center">
+    {sponsors.map((sponsor) => (
+        <a href={sponsor.data.link} rel="noopener noreferrer external" target="_blank">
+            <Image src={images[`/src${sponsor.data.image.link}`]()} alt={sponsor.data.image.alt} height={sponsor.data.image.height} width={sponsor.data.image.width}></Image>
+        </a>
+    ))}
 </div>
