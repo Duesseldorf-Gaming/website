@@ -43,10 +43,10 @@ const { Content } = await entry.render();
         <div class="flex flex-col w-fit 2xl:w-auto 2xl:flex-row pb-100 justify-center 2xl:justify-normal">
             <div class="flex flex-col-reverse 2xl:flex-col md:w-850">
                 <div class="md:absolute flex mt-40 md:mt-0 2xl:flex-row-reverse z-20 md:w-850">
-                    <Image class="h-70 w-auto md:h-100" src={images[`/src/images/teams/${entry.data.name}.png`]()} alt={entry.data.name} height=100 />
+                    <Image class="h-70 w-auto md:h-100" src={images[`/src/images/teams/${entry.data.name}.png`]!()} alt={entry.data.name} height=100 />
                 </div>
                 <div class="md:w-850 md:h-430 bg-gray-200 image-clip justify-items-end">
-                    <Image src={teamImage[`/src${entry.data.team_image}`]()} alt="" height="430" width=850></Image>
+                    <Image src={teamImage[`/src${entry.data.team_image}`]!()} alt="" height="430" width=850></Image>
                 </div>
             </div>
             <div class="flex flex-col mt-10 md:mt-50 2xl:mt-0 2xl:ml-20">
@@ -75,7 +75,7 @@ const { Content } = await entry.render();
         </div>
     </div>
     <div class="flex flex-wrap gap-5 justify-center">
-        <PlayerCard name={captain.data.tag} role="Captain" image={captain.data.image} youtube={!!(captain.data.social && captain.data.social.youtube)} twitch={!!(captain.data.social && captain.data.social.twitch)} youtubeUrl={captain.data.social && captain.data.social.youtube ? captain.data.social.youtube : ""} twitchUrl={captain.data.social && captain.data.social.twitch ? captain.data.social.twitch : ""}></PlayerCard>
+        <PlayerCard name={captain!.data.tag} role="Captain" image={captain!.data.image} youtube={!!(captain!.data.social && captain!.data.social.youtube)} twitch={!!(captain!.data.social && captain!.data.social.twitch)} youtubeUrl={captain!.data.social && captain!.data.social.youtube ? captain!.data.social.youtube : ""} twitchUrl={captain!.data.social && captain!.data.social.twitch ? captain!.data.social.twitch : ""}></PlayerCard>
         {manager ? <PlayerCard name={manager.data.tag} role="Manager" image={manager.data.image} youtube={!!(manager.data.social && manager.data.social.youtube)} twitch={!!(manager.data.social && manager.data.social.twitch)} youtubeUrl={manager.data.social && manager.data.social.youtube ? manager.data.social.youtube : ""} twitchUrl={manager.data.social && manager.data.social.twitch ? manager.data.social.twitch : ""}></PlayerCard> : ""}
         {coach ? <PlayerCard name={coach.data.tag} role="Coach" image={coach.data.image} youtube={!!(coach.data.social && coach.data.social.youtube)} twitch={!!(coach.data.social && coach.data.social.twitch)} youtubeUrl={coach.data.social && coach.data.social.youtube ? coach.data.social.youtube : ""} twitchUrl={coach.data.social && coach.data.social.twitch ? coach.data.social.twitch : ""}></PlayerCard> : ""}
         {players ? players.map(player => <PlayerCard name={player.data.tag} role="Player" image={player.data.image} youtube={!!(player.data.social && player.data.social.youtube)} twitch={!!(player.data.social && player.data.social.twitch)} youtubeUrl={player.data.social && player.data.social.youtube ? player.data.social.youtube : ""} twitchUrl={player.data.social && player.data.social.twitch ? player.data.social.twitch : ""}></PlayerCard>) : ""}
