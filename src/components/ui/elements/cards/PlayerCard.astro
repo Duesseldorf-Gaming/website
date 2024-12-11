@@ -38,12 +38,12 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
 			<div class="flex place-self-center">
 				{youtube ?
 					<div class="pl-2">
-						<ImageLink image={youtubeImage} alt="YouTube" url={youtubeUrl} rel="noopener noreferrer external" target="_blank" size="40"></ImageLink>
+						<ImageLink image={youtubeImage} alt="YouTube" url={youtubeUrl!} rel="noopener noreferrer external" target="_blank" size="40"></ImageLink>
 					</div> :
 					""}
 				{twitch ?
 					<div class="pl-2">
-						<ImageLink image={twitchImage} alt="Twitch" url={twitchUrl} rel="noopener noreferrer external" target="_blank" size="40"></ImageLink>
+						<ImageLink image={twitchImage} alt="Twitch" url={twitchUrl!} rel="noopener noreferrer external" target="_blank" size="40"></ImageLink>
 					</div> :
 					""}
 			</div>

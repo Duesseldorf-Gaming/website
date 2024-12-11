@@ -38,6 +38,7 @@ const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL o
     structuredData && (
     <script
             type="application/ld+json"
+            is:inline
             set:html={JSON.stringify(structuredData)}
     />
         )

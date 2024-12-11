@@ -25,7 +25,7 @@ if (!images[`/src/images/teams/${team}_text.png`]) throw new Error(`"src/images/
         </div>
         <div class="w-full">
             <div class="mt-4 mx-auto xs:ml-8 lg:m-0 lg:pl-14 lg:pt-14 w-250 lg:w-full lg:h-full">
-                <ImageLink image={images[`/src/images/teams/${team}_text.png`]()} size=240 alt=`DG ${team}` url=`/teams/${team.toLowerCase()}`></ImageLink>
+                <ImageLink image={images[`/src/images/teams/${team}_text.png`]!()} size=240 alt=`DG ${team}` url=`/teams/${team.toLowerCase()}`></ImageLink>
             </div>
         </div>
     </div>
