@@ -38,4 +38,4 @@ export const OG = {
     image: ogImageSrc,
 };
 
-export const activeGames = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"]
+export const activeGames: Array<"valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike" | "rainbow"> = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"]

@@ -1,4 +1,5 @@
 ---
+// Page for each team
 import type { InferGetStaticPropsType, ImageMetadata } from 'astro';
 import { getCollection, getEntry, getEntries } from 'astro:content';
 
@@ -22,18 +23,18 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 // 2. For your template, you can get the entry directly from the prop
 const { entry } = Astro.props;
 
-const captain = await getEntry('players', entry.data.captain.slug);
+const captain = await getEntry('players', entry.data.captain.id);
 let manager = undefined, coach = undefined, players = undefined, analysts = undefined;
-if (entry.data.manager) manager = await getEntry('players', entry.data.manager.slug);
-if (entry.data.coach) coach = await getEntry('players', entry.data.coach.slug);
+if (entry.data.manager) manager = await getEntry('players', entry.data.manager.id);
+if (entry.data.coach) coach = await getEntry('players', entry.data.coach.id);
 if (entry.data.players) players = await getEntries(entry.data.players);
 if (entry.data.analysts) analysts = await getEntries(entry.data.analysts);
 
 const images = import.meta.glob<{ default: ImageMetadata }>('src/images/teams/*.{jpeg,jpg,png,gif}')
 if (!images[`/src/images/teams/${entry.data.name}.png`]) throw new Error(`"src/images/teams/${entry.data.name}.png" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
 
-const teamImage = import.meta.glob<{ default: ImageMetadata }>('src/images/team_images/*.{jpeg,jpg}')
-if (!teamImage[`/src${entry.data.team_image}`] || !teamImage[`/src${entry.data.team_image}`]) throw new Error(`"src${entry.data.team_image}" does not exist in glob: "src/images/teams/*.{jpeg,jpg}"`);
+const teamImage = import.meta.glob<{ default: ImageMetadata }>('src/images/team_images/*.{jpeg,jpg,png,gif}')
+if (!teamImage[`/src${entry.data.team_image}`] || !teamImage[`/src${entry.data.team_image}`]) throw new Error(`"src${entry.data.team_image}" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
 
 const { Content } = await entry.render();
 ---
