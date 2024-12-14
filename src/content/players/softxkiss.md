@@ -1,4 +1,4 @@
 ---
 tag: softxkiss
-image: /images/players/placeholder.jpg
+image: /images/players/softxkiss.jpg
 ---

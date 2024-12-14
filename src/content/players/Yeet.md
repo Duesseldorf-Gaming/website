@@ -1,4 +1,4 @@
 ---
 tag: "Yeet"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/yeet.jpg"
 ---

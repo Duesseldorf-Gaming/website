@@ -1,4 +1,4 @@
 ---
 tag: "Monstermind"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Monstermind0505.jpg"
 ---

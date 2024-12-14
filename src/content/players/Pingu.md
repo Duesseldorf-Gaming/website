@@ -1,4 +1,4 @@
 ---
 tag: "Pingu"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/pingu.jpg"
 ---

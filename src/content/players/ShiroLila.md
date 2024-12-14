@@ -1,4 +1,4 @@
 ---
 tag: "ShiroLila"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Shirolila.jpg"
 ---

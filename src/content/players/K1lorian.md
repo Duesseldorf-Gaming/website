@@ -1,4 +1,4 @@
 ---
 tag: "K1lorian"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/K1lorian.jpg"
 ---

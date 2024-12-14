@@ -1,4 +1,4 @@
 ---
 tag: "Bearstronk"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Bearstronk.jpg"
 ---

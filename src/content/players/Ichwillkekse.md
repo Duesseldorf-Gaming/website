@@ -1,4 +1,4 @@
 ---
 tag: "Ichwillkekse"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/ichwillkekse.jpg"
 ---

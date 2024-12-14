@@ -1,4 +1,4 @@
 ---
 tag: "Jud0ka"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Jud0ka.jpg"
 ---

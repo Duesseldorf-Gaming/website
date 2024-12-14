@@ -1,4 +1,4 @@
 ---
 tag: "Manu"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Manu.jpg"
 ---

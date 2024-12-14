@@ -1,4 +1,4 @@
 ---
 tag: "Connithrill"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Connithrill.jpg"
 ---
