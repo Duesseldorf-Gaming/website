@@ -1,4 +1,4 @@
 ---
 tag: LittleVito03
-image: /images/players/placeholder.jpg
+image: /images/players/Littlevito03.jpg
 ---

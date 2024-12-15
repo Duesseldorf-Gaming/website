@@ -1,4 +1,4 @@
 ---
 tag: "Shir0u"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Shir0u.jpg"
 ---

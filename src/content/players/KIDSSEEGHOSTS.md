@@ -1,4 +1,4 @@
 ---
 tag: "KIDSSEEGHOSTS"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Sexus2.jpg"
 ---

@@ -1,4 +1,4 @@
 ---
 tag: "syk"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/syk.jpg"
 ---

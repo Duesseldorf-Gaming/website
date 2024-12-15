@@ -1,4 +1,4 @@
 ---
 tag: "Supernini2"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/supernini.jpg"
 ---

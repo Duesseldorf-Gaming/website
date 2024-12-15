@@ -1,4 +1,4 @@
 ---
 tag: Hypno
-image: /images/players/placeholder.jpg
+image: /images/players/Hypno.jpg
 ---

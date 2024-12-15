@@ -1,4 +1,4 @@
 ---
 tag: "Kathi"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/kathi.jpg"
 ---

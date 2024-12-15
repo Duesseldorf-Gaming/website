@@ -1,4 +1,4 @@
 ---
 tag: Bluedragon113
-image: /images/players/placeholder.jpg
+image: /images/players/Bluedragon113.jpg
 ---

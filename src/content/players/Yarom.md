@@ -1,4 +1,4 @@
 ---
 tag: "Yarom"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Yarom.jpg"
 ---

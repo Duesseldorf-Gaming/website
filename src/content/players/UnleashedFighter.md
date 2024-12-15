@@ -1,4 +1,4 @@
 ---
 tag: UnleashedFighter
-image: /images/players/placeholder.jpg
+image: /images/players/Unleashedfighter.jpg
 ---

@@ -1,4 +1,4 @@
 ---
 tag: "olracel"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/olracel.jpg"
 ---
