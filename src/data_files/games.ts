@@ -25,15 +25,6 @@ export const gameTextColors: any = {
     rainbow: 'text-rainbow',
 }
 
-export const gameImages: any = {
-    valorant: 'xl:bg-valorant-image',
-    league: 'xl:bg-league-image',
-    rocket_league: 'xl:bg-rocket_league-image',
-    overwatch: 'xl:bg-overwatch-image',
-    counter_strike: 'xl:bg-counter_strike-image',
-    rainbow: 'xl:bg-rainbow-image',
-}
-
 export const gameNames: any = {
     valorant: 'Valorant',
     league: 'League of Legends',
@@ -47,6 +38,5 @@ export default {
     gameColors,
     gameColorsHover,
     gameTextColors,
-    gameImages,
     gameNames,
 };

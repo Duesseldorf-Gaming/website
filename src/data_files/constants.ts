@@ -30,10 +30,12 @@ export const SEO = {
 };
 
 export const OG = {
-    locale: "en_US",
+    locale: "de_DE",
     type: "website",
     url: SITE.url,
     title: `${SITE.title}: : E-Sports Düsseldorf`,
     description: "E-Sports Sparte des Hochschulsports der Düsseldorfer Hochschulen und Universitäten.",
     image: ogImageSrc,
 };
+
+export const activeGames: Array<"valorant" | "league" | "overwatch" | "rocket_league" | "counter_strike" | "rainbow"> = ["valorant", "league", "overwatch", "rocket_league", "counter_strike"]

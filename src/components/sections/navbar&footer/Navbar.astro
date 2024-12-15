@@ -4,36 +4,71 @@ import NavLink from "@components/ui/links/NavLink.astro";
 import strings from "@utils/navigation.ts";
 import Logo from "@components/Logo.astro";
 
-// Select the correct translation based on the page's lang prop:
 ---
 
 <!-- Main header component -->
-<header class="py-20 px-20 xs:px-50 1.5xl:px-100 md:py-50 sticky top-0 z-50 bg-gray-500">
+<header class="global-padding py-20 md:py-50 sticky top-0 z-50 bg-gray-500">
     <!-- Navigation container -->
     <nav class="flex " aria-label="Global">
         <div class="">
             <!-- DG logo -->
                 <a class="" href="/" aria-label="Brand">
-                    <Logo class="max-h-50 md:max-h-fit h-100 max-w-fit" />
+                    <Logo class="max-h-14 md:max-h-100 h-100 max-w-fit" />
                 </a>
         </div>
         <!-- Contains navigation links -->
-        <div class="hidden md:block content-end basis-full overflow-hidden">
+        <div class="flex flex-col md:flex-row-reverse items-end basis-full overflow-hidden">
             <!-- Navigation links container -->
-            <div class="hidden mt-5 md:flex gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:ps-7">
-                <ul class="flex flex-row gap-x-12">
-                    <!-- Navigation links and Authentication component -->
+            <input class="menu-btn hidden" type="checkbox" id="menu-btn" />
+            <label class="menu-icon md:hidden cursor-pointer inline-block float-right pt-30 relative select-none" for="menu-btn">
+                <span class="
+                navicon block before:bg-gray-100 after:bg-gray-100 before:top-10 after:-top-10
+                h-2 w-14 relative duration-200 transition-[background] ease-out
+                "/>
+            </label>
+            <div class="
+            menu mt-50 clear-both max-h-0 transition-[max-height] duration-200 ease-out
+            md:max-h-fit md:flex gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:ps-7
+            ">
+                <ul class="flex flex-col gap-y-2.5 items-end md:flex-row md:gap-x-12">
+                    <!-- Navigation links -->
                     {strings.indexNavBarLinks.map(link => (
                             <li><NavLink link={link.url} name={link.name} /></li>
                     ))}
                 </ul>
             </div>
         </div>
-        <div class="md:hidden flex flex-row basis-full justify-end items-center">
-            <svg width="68" height="25" viewBox="0 0 68 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect y="18" width="68" height="7" fill="#8C8C8C"/>
-                <rect width="68" height="7" fill="#8C8C8C"/>
-            </svg>
-        </div>
     </nav>
 </header>
+<style>
+    .navicon:before,
+    .navicon:after {
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .menu-btn:checked ~ .menu {
+        max-height: 240px;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+</style>

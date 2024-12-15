@@ -1,25 +1,32 @@
 ---
 import type {ImageMetadata} from "astro";
-import {Image} from "astro:assets";
-import {gameImages, gameColors} from "@data/games";
+import {Image, getImage} from "astro:assets";
+import {gameColors} from "@data/games";
+import GameIcon from "../icons/GameIcon.astro";
 
 const { game } = Astro.props;
 
-const images = import.meta.glob<{ default: ImageMetadata }>('src/images/games/*.{jpeg,jpg,png,svg,gif}')
-if (!images[`/src/images/games/${game}.png`]) throw new Error(`"/src/images/games/${game}.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
-else if (!images[`/src/images/games/${game}-hover.png`]) throw new Error(`"/src/images/games/${game}-hover.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
-else if (!images[`/src/images/games/${game}-icon.svg`]) throw new Error(`"/src/images/games/${game}-icon.svg" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
-else if (!images[`/src/images/games/${game}-reg.png`]) throw new Error(`"/src/images/games/${game}-reg.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,svg,gif}"`);
+const images = import.meta.glob<{ default: ImageMetadata }>('src/images/games/*.{jpeg,jpg,png,gif}')
+if (!images[`/src/images/games/${game}.png`]) throw new Error(`"/src/images/games/${game}.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,gif}"`);
+else if (!images[`/src/images/games/${game}-gray.png`]) throw new Error(`"/src/images/games/${game}-hover.png" does not exist in glob: "/src/images/games/*.{jpeg,jpg,png,gif}"`);
+
+const gameImage = await getImage({
+    src: images[`/src/images/games/${game}.png`]!(),
+    format: "webp",
+});
 ---
+<head>
+    <link rel="preload" href={gameImage.src} as="image" />
+</head>
 <a href=`/teams/${game}`>
     <div class="min-w-160 min-h-160 w-160 h-160 xl:w-560 xl:h-250 group">
-        <div class=`relative p-40 xl:p-0 bg-gray-300 ${gameImages[game]} grayscale content-center bg-cover min-w-full min-h-full max-w-full max-h-full block group-hover:hidden`>
-            <Image class="block xl:hidden max-h-80" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${game} teams` height="250" width="560" ></Image>
-            <Image class="hidden xl:block h-full max-w-full max-h-fit" src={images[`/src/images/games/${game}-reg.png`]()} alt=`${game} teams` height="250" width="560" ></Image>
+        <div class=`relative p-40 xl:p-0 bg-gray-300 content-center min-w-full min-h-full max-w-full max-h-full block group-hover:hidden`>
+            <GameIcon class="block xl:hidden h-full max-w-full max-h-fit" game={game} />
+            <Image class="hidden xl:block h-full max-w-full max-h-fit" src={images[`/src/images/games/${game}-gray.png`]!()} alt=`${game} teams` height="250" width="560" ></Image>
         </div>
-        <div class=`relative p-40 xl:p-0 ${gameColors[game]} ${gameImages[game]} content-center bg-cover min-w-full min-h-full max-w-full max-h-full hidden group-hover:block`>
-            <Image class="block xl:hidden" src={images[`/src/images/games/${game}-icon.svg`]()} alt=`${game} teams` height="250" width="560" ></Image>
-            <Image class="hidden xl:block h-full max-w-full max-h-fit" src={images[`/src/images/games/${game}-hover.png`]()} alt=`${game} teams` height="250" width="560" ></Image>
+        <div class=`relative p-40 xl:p-0 ${gameColors[game]} content-center min-w-full min-h-full max-w-full max-h-full hidden group-hover:block`>
+            <GameIcon class=`block xl:hidden ${game == "counter_strike" ? "fill-gray-200" : ""} h-full max-w-full max-h-fit` game={game} />
+            <Image class="hidden xl:block h-full max-w-full max-h-fit" src={gameImage.src} alt=`${game} teams` height="250" width="560" ></Image>
         </div>
     </div>
 </a>
