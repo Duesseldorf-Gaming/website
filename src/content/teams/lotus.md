@@ -9,3 +9,4 @@ captain: brunobanuni
 players: [shadowhunter, fearhunter, anni, shirolila, monstermind]
 analysts: []
 ---
+Wann erste Liga?
