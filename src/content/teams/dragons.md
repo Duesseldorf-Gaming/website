@@ -2,7 +2,7 @@
 name: "Dragons"
 game: "rocket_league"
 league: "1"
-established: "2021"
+established: "2020"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
 captain: snooperii

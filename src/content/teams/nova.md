@@ -2,7 +2,7 @@
 name: "Nova"
 game: "league"
 league: "3"
-established: "2023"
+established: "2021"
 uniliga: "https://www.opleague.pro/team/5695"
 team_image: "/images/team_images/placeholder.jpg"
 captain: k1lorian
