@@ -1,4 +1,4 @@
 ---
 tag: "Shadowhunter"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Felix#Mausi.jpg"
 ---
