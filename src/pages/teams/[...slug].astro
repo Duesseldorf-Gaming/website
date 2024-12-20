@@ -13,7 +13,7 @@ import {Image} from "astro:assets";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
     const teamPages = await getCollection('teams');
-    return teamPages.map(entry => ({
+    return teamPages.map((entry) => ({
         params: { slug: entry.slug }, props: { entry },
     }));
 }
@@ -45,7 +45,7 @@ const { Content } = await entry.render();
                 <div class="md:absolute flex mt-40 md:mt-0 2xl:flex-row-reverse z-20 md:w-850">
                     <Image class="h-70 w-auto md:h-100" src={images[`/src/images/teams/${entry.data.name}.png`]!()} alt={entry.data.name} height=100 />
                 </div>
-                <div class="md:w-850 md:h-430 bg-gray-200 image-clip justify-items-end">
+                <div class="md:w-850 md:h-430 image-clip justify-items-end">
                     <Image src={teamImage[`/src${entry.data.team_image}`]!()} alt="" height="430" width=850></Image>
                 </div>
             </div>
