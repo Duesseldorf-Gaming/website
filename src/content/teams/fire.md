@@ -2,7 +2,7 @@
 name: "Fire"
 game: "valorant"
 league: "1"
-established: "2023"
+established: "2020"
 uniliga: "https://www.opleague.pro/team/5407"
 team_image: "/images/team_images/placeholder.jpg"
 captain: kinguh
