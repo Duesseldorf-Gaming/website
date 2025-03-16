@@ -3,7 +3,7 @@
 import Meta from "@components/Meta.astro";
 import Navbar from "@components/sections/navbar&footer/Navbar.astro";
 import FooterSection from "@components/sections/navbar&footer/FooterSection.astro";
-import '@styles/main.css';
+import '@styles/global.css'
 import { SITE } from "@data/constants";
 
 
@@ -38,7 +38,7 @@ We set the language of the page to English and add classes for scrollbar and scr
     <!-- Define the title of the page -->
     <title>{title}</title>
 </head>
-<body class="max-w-screen-3xl ml-auto mr-auto flex flex-col">
+<body class="max-w-screen-3xl ml-auto mr-auto flex flex-col text-white">
 <!--
 Setting up the main structure of the page.
 The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.

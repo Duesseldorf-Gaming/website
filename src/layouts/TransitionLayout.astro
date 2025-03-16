@@ -1,10 +1,10 @@
 ---
 // Importing necessary components
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 import Meta from "@components/Meta.astro";
 import Navbar from "@components/sections/navbar&footer/Navbar.astro";
 import FooterSection from "@components/sections/navbar&footer/FooterSection.astro";
-import '@styles/main.css';
+import '@styles/global.css'
 import { SITE } from "@data/constants";
 
 
@@ -28,7 +28,7 @@ We set the language of the page to English and add classes for scrollbar and scr
 <head>
     <!-- Adding metadata to the HTML document -->
     <Meta meta={meta} structuredData={structuredData} />
-    <ViewTransitions />
+    <ClientRouter />
 
     <link
             rel="preload"

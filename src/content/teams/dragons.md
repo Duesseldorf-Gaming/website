@@ -9,3 +9,9 @@ captain: snooperii
 players: [mika, yeet, kaizen, timur4k]
 analysts: []
 ---
+| Platz | Turnier  | Season          |
+|-------|----------|-----------------|
+| 3.    | Playoffs | Uniliga 2020/21 |
+| 1.    | Playoffs | Uniliga 2022    |
+| 2.    | Playoffs | Uniliga 2021/22 |
+| 2.    | Playoffs | Uniliga 2022    |
