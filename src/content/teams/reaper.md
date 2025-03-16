@@ -9,3 +9,6 @@ captain: connithrill
 players: [łeÿłâ, swing, fadèd, smωugh, zilax, ptsd, kaecko]
 analysts: []
 ---
+| Platz | Turnier  | Season          |
+|-------|----------|-----------------|
+| 3.    | Playoffs | Uniliga 2024/25 |

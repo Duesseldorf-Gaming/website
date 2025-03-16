@@ -18,18 +18,6 @@ export default {
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
-			'primary': '#DDA169',
-			'white': '#F3F3F3',
-			'gray-100': '#8C8C8C',
-			'gray-200': '#444444',
-			'gray-300': '#2C2C2C',
-			'gray-400': '#1A1A1A',
-			'gray-500': '#010101',
-			'valorant': '#FF4655',
-			'league': '#C89B3C',
-			'rocket': '#016FF2',
-			'overwatch': '#ED6516',
-			'rainbow': '#466167',
 		},
 		fontFamily: {
 			'display': ['BebasNeue-Regular', ...defaultTheme.fontFamily.sans],

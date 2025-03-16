@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+    --color-white: #F3F3F3;
+    --color-primary: #DDA169;
+    --color-gray-100: #8C8C8C;
+    --color-gray-200: #444444;
+    --color-gray-300: #2C2C2C;
+    --color-gray-400: #1A1A1A;
+    --color-gray-500: #010101;
+    --color-valorant: #FF4655;
+    --color-league: #C89B3C;
+    --color-rocket: #016FF2;
+    --color-overwatch: #ED6516;
+    --color-rainbow: #466167;
+}
+
+.global-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: 460px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @media (min-width: 1337px) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+.button-clip-normal {
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 10% 100%, 0 60%);
+
+    @media not all and (min-width: 960px) {
+        clip-path: polygon(85% 0, 100% 30%, 100% 100%, 25% 100%, 0% 50%, 0 0);
+    }
+}
+
+.button-clip-normal-static {
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 10% 100%, 0 60%);
+}
+
+.card-clip {
+    clip-path: polygon(90% 0, 100% 25%, 100% 100%, 0 100%, 0 0);
+}
+
+.card-noclip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.image-clip {
+    clip-path: polygon(0 0, 60% 0, 100% 70%, 100% 100%, 10% 100%, 0 80%);
+
+    @media not all and (min-width: 1536px) {
+        clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 40% 100%, 0 50%);
+    }
+
+    @media not all and (min-width: 960px) {
+        clip-path: polygon(0 0, 70% 0, 100% 50%, 100% 100%, 0 100%, 0 100%);
+    }
+}
+
+.background {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-attachment: fixed;
+
+    /*dumbass workaround because stupid iOS doesn't support fixed backgrounds*/
+    @supports (-webkit-touch-callout: none) {
+        background-attachment: scroll;
+    }
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
+th {
+    font-family: 'BebasNeue-Regular', sans-serif;
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+    padding-right: 24px;
+    line-height: normal;
+}
+
+td {
+    font-family: 'NunitoSans', sans-serif;
+    font-size: 1.5rem;
+}
+
+h1, h2, h3 {
+    font-family: 'BebasNeue-Regular', sans-serif;
+    line-height: normal;
+    color: var(--color-white);
+}
+
+h1 {
+    font-size: 3rem;
+    word-break: break-all;
+
+    @media (min-width: 768px) {
+        font-size: 96px;
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+    word-break: break-all;
+
+    @media (min-width: 768px) {
+        font-size: 64px;
+    }
+}
+
+h3 {
+    font-size: 2rem;
+    word-break: break-all;
+
+    @media (min-width: 768px) {
+        font-size: 48px;
+    }
+}
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/NunitoSans_10pt-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/NunitoSans_10pt-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/NunitoSans_10pt-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/NunitoSans_10pt-Black.ttf') format('truetype');
+}
+
+@config "./../../tailwind.config.mjs";
