@@ -1,7 +1,7 @@
 ---
 name: "Eclipse"
 game: "valorant"
-league: "1"
+league: "4"
 established: "2023"
 uniliga: "https://www.opleague.pro/team/5650-DG-Eclipse"
 team_image: "/images/team_images/Eclipse.jpg"
