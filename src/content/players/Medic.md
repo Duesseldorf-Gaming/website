@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Medic
 image: /images/players/placeholder.jpg
-social:
 ---
