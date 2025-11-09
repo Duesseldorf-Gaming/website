@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Remocapucino
 image: /images/players/placeholder.jpg
-social:
 ---
