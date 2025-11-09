@@ -7,6 +7,6 @@ uniliga: "https://www.opleague.pro/team/5650-DG-Eclipse"
 team_image: "/images/team_images/Eclipse.jpg"
 description: "2t Liga Demons"
 captain: norial
-players: [qventox, lamainlila, Schmifl]
+players: [qventox, lamainlila, schmifl]
 analysts: []
 ---
