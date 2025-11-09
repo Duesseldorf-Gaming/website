@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Dusty
 image: /images/players/placeholder.jpg
-social:
 ---

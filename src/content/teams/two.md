@@ -1,7 +1,7 @@
 ---
 name: "Two"
 game: "counter_strike"
-league: "2"
+league: "3"
 established: "2023"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"

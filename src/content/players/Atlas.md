@@ -1,4 +1,4 @@
 ---
-tag: "DGAtlas"
+tag: "atlas"
 image: "/images/players/Atlas.jpg"
 ---

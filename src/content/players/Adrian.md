@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Adrian
 image: /images/players/placeholder.jpg
-social:
 ---

@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Acco
 image: /images/players/placeholder.jpg
-social:
 ---

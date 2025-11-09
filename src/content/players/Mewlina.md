@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Mewlina
 image: /images/players/placeholder.jpg
-social:
 ---

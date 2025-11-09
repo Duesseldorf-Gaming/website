@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Nevermind
 image: /images/players/placeholder.jpg
-social:
 ---

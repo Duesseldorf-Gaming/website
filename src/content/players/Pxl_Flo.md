@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Pxl_Flo
 image: /images/players/placeholder.jpg
-social:
 ---

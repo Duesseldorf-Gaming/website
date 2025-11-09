@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Wrecked
 image: /images/players/placeholder.jpg
-social:
 ---

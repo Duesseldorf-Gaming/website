@@ -1,4 +1,4 @@
 ---
-tag: "K1lorian"
+tag: "LFBee"
 image: "/images/players/K1lorian.jpg"
 ---

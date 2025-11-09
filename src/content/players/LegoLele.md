@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: LegoLele
 image: /images/players/placeholder.jpg
-social:
 ---

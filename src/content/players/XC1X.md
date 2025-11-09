@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: XC1X
 image: /images/players/placeholder.jpg
-social:
 ---

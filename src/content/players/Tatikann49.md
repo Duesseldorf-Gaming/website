@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: tatikann49
 image: /images/players/placeholder.jpg
-social:
 ---

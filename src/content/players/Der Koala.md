@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: Der Koala
 image: /images/players/placeholder.jpg
-social:
 ---

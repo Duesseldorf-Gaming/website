@@ -1,6 +1,4 @@
 ---
-tag: 
-name:
+tag: cloud
 image: /images/players/placeholder.jpg
-social:
 ---

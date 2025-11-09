@@ -1,7 +1,7 @@
 ---
 name: "Faith"
 game: "valorant"
-league: "2"
+league: "3"
 established: "2023"
 uniliga: "https://www.opleague.pro/team/5345-DG-Faith"
 team_image: "/images/team_images/placeholder.jpg"
