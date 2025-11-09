@@ -6,6 +6,6 @@ established: "2023"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
 captain: mega
-players: [veptis, tamagotchi, ititus, sokizx, artx, snakehead2_1, sgt_penner]
+players: [tamagotchi, syk, smog_1, hypnof, remocapucino, heybey, snakehead2_1]
 analysts: []
 ---
