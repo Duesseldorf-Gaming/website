@@ -5,8 +5,8 @@ league: "1"
 established: "2021"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
-captain: mina
-players: [megumin, joka, snooperii, nevsh200, pingu]
+captain: pingu
+players: [megumin, joka, snooperii, nevsh200, adrian]
 analysts: []
 ---
 | Platz | Turnier  | Season          |
