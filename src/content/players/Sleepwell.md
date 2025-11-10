@@ -1,4 +1,4 @@
 ---
 tag: sleepwell
-image: /images/players/placeholder.jpg
+image: /images/players/sleepwell.jpg
 ---
