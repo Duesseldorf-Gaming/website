@@ -6,6 +6,6 @@ established: "2023"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
 captain: manu
-players: [wiwn, d7, unch4in3d, moerchen, tata_feufeu, baddoge]
+players: [wiwn, d7, unch4in3d, moerchen, tatafeufeu, baddoge]
 analysts: []
 ---
