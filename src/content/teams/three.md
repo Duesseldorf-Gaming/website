@@ -1,7 +1,7 @@
 ---
 name: "Three"
 game: "counter_strike"
-league: "2"
+league: "3"
 established: "2021"
 uniliga: "https://www.faceit.com/de/teams/e72e35ad-5519-476c-93f5-61002883a516"
 team_image: "/images/team_images/placeholder.jpg"

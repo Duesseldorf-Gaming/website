@@ -1,5 +1,5 @@
 ---
-name: "elysium"
+name: "Elysium"
 game: "overwatch"
 league: "4"
 established: "2025"
