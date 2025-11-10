@@ -15,3 +15,4 @@ analysts: []
 | 2.    | Playoffs | Uniliga 2023/24 |
 | 2.    | Playoffs | Uniliga 2024    |
 | 2.    | Playoffs | Uniliga 2024/25 |
+| 1.    | Playoffs | Uniliga 2025 |
