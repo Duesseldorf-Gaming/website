@@ -1,4 +1,4 @@
 ---
-tag: TAKI12
+tag: cattos
 image: /images/players/placeholder.jpg
 ---
