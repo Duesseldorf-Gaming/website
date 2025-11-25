@@ -1,4 +1,4 @@
 ---
 tag: D3XDAY
-image: /images/players/placeholder.jpg 
+image: /images/players/D3XDAY.jpg 
 ---

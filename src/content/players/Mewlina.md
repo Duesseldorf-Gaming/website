@@ -1,4 +1,4 @@
 ---
 tag: Mewlina
-image: /images/players/placeholder.jpg
+image: /images/players/mewlina.jpg
 ---

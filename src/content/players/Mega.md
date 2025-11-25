@@ -1,4 +1,4 @@
 ---
 tag: "Mega"
-image: "/images/players/placeholder.jpg"
+image: "/images/players/Mega.jpg"
 ---
