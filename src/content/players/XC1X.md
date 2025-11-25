@@ -1,4 +1,4 @@
 ---
 tag: XC1X
-image: /images/players/placeholder.jpg
+image: /images/players/XC1X.jpg
 ---

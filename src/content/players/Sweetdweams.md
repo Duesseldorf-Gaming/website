@@ -1,4 +1,4 @@
 ---
 tag: sweetdweams
-image: /images/players/placeholder.jpg
+image: /images/players/sweetdweams.jpg
 ---
