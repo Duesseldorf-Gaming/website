@@ -6,6 +6,6 @@ established: "2023"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
 captain: legolele
-players: [olracel, exclu, balkanian]
+players: [balkanian, exclu, yeet]
 analysts: []
 ---

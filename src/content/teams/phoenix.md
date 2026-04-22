@@ -6,6 +6,6 @@ established: "2022"
 uniliga: "https://www.opleague.pro/team/5795"
 team_image: "/images/team_images/placeholder.jpg"
 captain: swooosh10
-players: [shir0u, supernini2, ichwillkekse, ubuktu, forgottenfear]
+players: [shir0u, supernini2, ubuktu, forgottenfear, pukkes]
 analysts: []
 ---

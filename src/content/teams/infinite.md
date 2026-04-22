@@ -6,7 +6,7 @@ established: "2021"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
 captain: pingu
-players: [megumin, joka, snooperii, nevsh200, adrian]
+players: [megumin, joka, snooperii, nevsh200, adrian, plant]
 analysts: []
 ---
 | Platz | Turnier  | Season          |
