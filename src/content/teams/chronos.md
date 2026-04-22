@@ -1,12 +1,12 @@
 ---
-name: "Chimera"
+name: "Chronos"
 game: "overwatch"
-league: "4"
+league: "2"
 established: "2024"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
-coach: sleepwell
+coach:
 captain: bluedragon113
-players: [atlas, darklord, xc1x, constantbeta, francesc, yarom, funney, sweetdweams]
+players: [xc1x, yarom, funney, sweetdweams, itzrna, kniay]
 analysts: []
 ---

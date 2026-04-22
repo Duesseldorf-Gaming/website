@@ -6,7 +6,7 @@ established: "2020"
 uniliga: ""
 team_image: "/images/team_images/placeholder.jpg"
 captain: snooperii
-players: [cloudy, timur4k]
+players: [stingray, yaki_tk]
 analysts: []
 ---
 | Platz | Turnier  | Season          |
