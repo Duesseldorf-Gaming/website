@@ -1,8 +1,17 @@
 // 1. Import utilities from `astro:content`
-import {z, defineCollection, reference} from 'astro:content';
+import {defineCollection, reference} from 'astro:content';
+
+// 2. Import loader(s)
+import {glob} from 'astro/loaders';
+
+// 3. Import Zod
+import {z} from 'astro/zod';
 // 2. Define your collection(s)
 const teamsCollection = defineCollection({
-    type: 'content', // v2.5.0 and later
+    loader: glob({
+        base: './src/content/teams',
+        pattern: '**/!(_)*.md'
+    }),
     schema: z.object({
         name: z.string(),
         game: z.enum(['valorant', 'league', 'rocket_league', 'overwatch', 'counter_strike', 'rainbow']),
@@ -20,7 +29,10 @@ const teamsCollection = defineCollection({
 });
 
 const playersCollection = defineCollection({
-    type: 'content', // v2.5.0 and later
+    loader: glob({
+        base: './src/content/players',
+        pattern: '**/!(_)*.md'
+    }),
     schema: z.object({
         tag: z.string(),
         name: z.string().default(''),
@@ -33,7 +45,10 @@ const playersCollection = defineCollection({
 });
 
 const sponsorsCollection = defineCollection({
-    type: 'content', // v2.5.0 and later
+    loader: glob({
+        base: './src/content/sponsors',
+        pattern: '**/!(_)*.md'
+    }),
     schema: z.object({
         image: z.object({
             link: z.string(),

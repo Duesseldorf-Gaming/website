@@ -1,7 +1,7 @@
 ---
 // Page for each team
 import type { InferGetStaticPropsType, ImageMetadata } from 'astro';
-import { getCollection, getEntry, getEntries } from 'astro:content';
+import { getCollection, getEntry, getEntries, render } from 'astro:content';
 
 import MainLayout from "@layouts/MainLayout.astro";
 import PlayerCard from "@components/ui/elements/cards/PlayerCard.astro";
@@ -14,7 +14,7 @@ import {Image} from "astro:assets";
 export async function getStaticPaths() {
     const teamPages = await getCollection('teams');
     return teamPages.map((entry) => ({
-        params: { slug: entry.slug }, props: { entry },
+        params: { slug: entry.id }, props: { entry },
     }));
 }
 
@@ -36,7 +36,7 @@ if (!images[`/src/images/teams/${entry.data.name}.png`]) throw new Error(`"src/i
 const teamImage = import.meta.glob<{ default: ImageMetadata }>('src/images/team_images/*.{jpeg,jpg,png,gif}')
 if (!teamImage[`/src${entry.data.team_image}`] || !teamImage[`/src${entry.data.team_image}`]) throw new Error(`"src${entry.data.team_image}" does not exist in glob: "src/images/teams/*.{jpeg,jpg,png,gif}"`);
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 <MainLayout>
     <div class="flex justify-center 2xl:justify-normal w-full">
@@ -56,12 +56,12 @@ const { Content } = await entry.render();
                 </div>
                 <div class="flex flex-row pt-20 md:pt-40 2xl:pt-10 space-x-8">
                     <div class="place-self-auto">
-                    {entry.data.uniliga ?
-                        <a href={entry.data.uniliga} rel="noopener noreferrer external" target="_blank">
-                            <Image class="h-20 w-auto md:h-30" src={uniliga} alt="Uniliga logo" height=30 />
-                        </a> :
-                        <Image class="h-20 w-auto md:h-30" src={uniligaAlt} alt="Uniliga logo" height=30 />
-                    }
+                        {entry.data.uniliga ?
+                                <a href={entry.data.uniliga} rel="noopener noreferrer external" target="_blank">
+                                    <Image class="h-20 w-auto md:h-30" src={uniliga} alt="Uniliga logo" height=30 />
+                                </a> :
+                                <Image class="h-20 w-auto md:h-30" src={uniligaAlt} alt="Uniliga logo" height=30 />
+                        }
                     </div>
                     <League league={entry.data.league} game={entry.data.game}></League>
                 </div>
