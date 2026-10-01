@@ -13,8 +13,8 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.2",
-    "autoprefixer": "^10.6.0",
+    "astro": "^7.3.5",
+    "autoprefixer": "^10.6.1",
     "postcss": "8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
