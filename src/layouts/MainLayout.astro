@@ -19,13 +19,13 @@ interface Props {
 }
 ---
 
-<!--
+{/*
 This is the main structure for the page.
 We set the language of the page to English and add classes for scrollbar and scroll behavior.
--->
+*/}
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16 bg-gray-500">
 <head>
-    <!-- Adding metadata to the HTML document -->
+    {/* Adding metadata to the HTML document */}
     <Meta meta={meta} structuredData={structuredData} />
 
     <link
@@ -35,14 +35,14 @@ We set the language of the page to English and add classes for scrollbar and scr
             type="font/ttf"
             crossorigin
     />
-    <!-- Define the title of the page -->
+    {/* Define the title of the page */}
     <title>{title}</title>
 </head>
 <body class="max-w-screen-3xl ml-auto mr-auto flex flex-col text-white">
-<!--
+{/*
 Setting up the main structure of the page.
 The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
--->
+*/}
 <div>
     <Navbar />
     <main class="global-padding pb-100 pt-30 md:pt-70 bg-gray-400 max-h-full">
